@@ -4,21 +4,36 @@ function randomNumber(min, max, r = 2) {
     return (Math.floor(Math.random() * (max - min)) + min).toFixed(r)
 }
 
-window.onload = () => {
+overlay = document.getElementById("overlay")
+imageWrapper = document.querySelector("#overlay > .imageWrapper")
+watchingImage = false;
 
-    [...Array(10).keys()].forEach(x => {
-
-
-            /* obj = document.createElement("img")
-            obj.setAttribute("src", "./assets/svg/hexagon.svg");
-            [x, y, r] = [
-                [0, 100],
-                [0, 100],
-                [2, 15]
-            ].map(a => randomNumber(a[0], a[1]))
-            obj.setAttribute("style", `position: absolute; top: ${x}%; left: ${y}%; height: ${r}%;`)
-            particles.push([obj, x, y])
-            document.querySelector("#particles").appendChild(obj) */
-        })
-        // requestAnimationFrame(animate)
+function toggleOverlay(src = "") {
+    if (watchingImage) {
+        overlay.style.display = "none"
+        imageWrapper.removeChild(imageWrapper.querySelector("img"));
+        document.body.style.overflow = "";
+        watchingImage = false;
+    } else {
+        overlay.style.display = "block"
+        overlay.style.top = `${window.scrollY}px`
+        obj = document.createElement("img")
+        obj.setAttribute("src", src)
+        imageWrapper.appendChild(obj)
+        document.body.style.overflow = "hidden"
+        watchingImage = true;
+    }
 }
+
+document.addEventListener("keyup", e => {
+    console.log(e.key)
+    if (e.key == "Escape" && watchingImage) {
+        toggleOverlay()
+    }
+})
+
+overlay.addEventListener("click", (e) => {
+    if (e.target.nodeName.toLowerCase() !== "img" && watchingImage) {
+        toggleOverlay()
+    }
+})

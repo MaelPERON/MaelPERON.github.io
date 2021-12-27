@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* HTML elements */
+
 body {
     padding: 0;
     margin: 0;
@@ -27,6 +30,38 @@ header {
     align-items: center;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px dashed var(--primary);
+}
+
+code.bold {
+    color: var(--background);
+    background-image: linear-gradient(90deg, var(--primary-2), var(--primary));
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+section {
+    min-height: 100vh;
+}
+
+
+/* Particles */
+
 #particles {
     position: absolute;
     z-index: -1;
@@ -53,6 +88,9 @@ header {
     }
 }
 
+
+/* Spacers */
+
 .spacer {
     aspect-ratio: 960/300;
     width: 100%;
@@ -70,48 +108,8 @@ header {
     transform: rotate(180deg);
 }
 
-h1 {
-    font-size: 4rem;
-}
 
-h2 {
-    font-size: 2rem;
-}
-
-p {
-    font-size: 1.2rem;
-}
-
-hr {
-    border: none;
-    border-bottom: 2px dashed var(--primary);
-}
-
-code.bold {
-    color: var(--background);
-    background-image: linear-gradient(90deg, var(--primary-2), var(--primary));
-    padding: 0 4px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-#photo-cv {
-    width: 320px;
-    border-radius: 100%;
-}
-
-section {
-    height: 100vh;
-}
-
-#menu-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    box-sizing: border-box;
-    height: 100%;
-    padding: 200px;
-}
+/* Custom Elements */
 
 .menu-button {
     display: flex;
@@ -129,9 +127,138 @@ section {
     transform: translateY(-10px);
 }
 
+.fa-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fa {
+    display: block;
+    width: 40px;
+}
+
+.fa>i>svg {
+    color: var(--primary);
+}
+
+.banner {
+    background-color: var(--primary);
+    color: var(--secondary);
+    width: max-content;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 100px;
+    border-radius: 0 0 100px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    background: var(--primary);
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+    transition: ease-in .1s;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card span {
+    background-color: var(--primary);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: .1s ease-in;
+}
+
+.card:hover {
+    cursor: zoom-in;
+    box-shadow: -0.3rem 0.3rem 0 var(--primary);
+    transform: translate(0.3rem, -0.3rem);
+}
+
+.card:hover span {
+    pointer-events: none;
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+    transition: .1s ease-in;
+    transform: translateY(-0.5rem);
+    filter: grayscale(50%);
+}
+
+
+/* Pages */
+
+#photo-cv {
+    width: 320px;
+    border-radius: 100%;
+}
+
+#overlay {
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    cursor: zoom-out;
+}
+
+#overlay img {
+    cursor: default;
+}
+
+#overlay .imageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#overlay img {
+    height: 90vh;
+}
+
+
+/* Menu */
+
+#menu-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 200px;
+}
+
 #menu {
     background-color: var(--primary);
 }
+
+
+/* About Me */
 
 #about-me .content {
     display: flex;
@@ -151,17 +278,22 @@ section {
     margin-top: 0;
 }
 
-.fa-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+
+/* Academic Drawing */
+
+#academic-drawing .content {
+    padding: 50px;
 }
 
-.fa {
-    display: block;
-    width: 40px;
-}
 
-.fa>i>svg {
-    color: var(--primary);
+/* Perspective */
+
+
+/* Photography */
+
+#photography .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    padding: 50px;
+    gap: 1rem;
 }
