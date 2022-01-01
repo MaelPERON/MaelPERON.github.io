@@ -42,42 +42,6 @@ section {
 }
 
 
-/* Pages */
-
-#photo-cv {
-    width: 320px;
-    border-radius: 100%;
-}
-
-#overlay {
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    cursor: zoom-out;
-}
-
-#overlay img {
-    cursor: default;
-}
-
-#overlay .imageWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-}
-
-#overlay img {
-    height: 90vh;
-}
-
-
 /* Header */
 
 header {
