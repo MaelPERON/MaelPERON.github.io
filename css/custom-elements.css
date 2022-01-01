@@ -102,6 +102,27 @@
 }
 
 
+/* Colors */
+
+.fa-primary {
+    color: var(--primary);
+}
+
+.fa-secondary {
+    color: var(--secondary);
+}
+
+.fa-background {
+    color: var(--background);
+}
+
+.fa-primary,
+.fa-secondary,
+.fa-background {
+    transition: var(--transition-speed);
+}
+
+
 /* Others */
 
 .fa-buttons {
