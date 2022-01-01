@@ -1,3 +1,17 @@
+function createCard(contentDiv, path, span = null) {
+    obj = document.createElement("div")
+    obj.classList.add("card")
+    obj.classList.add("lazy")
+    obj.setAttribute("data-src", path);
+    if (span != null) {
+        spanElement = document.createElement("span");
+        spanElement.textContent = span;
+        obj.appendChild(spanElement);
+    }
+    contentDiv.appendChild(obj)
+    return obj;
+}
+
 // Dessin Académique
 // Perspective
 // Photographie
@@ -12,11 +26,7 @@ array = [
 ].forEach(elements => {
     [path, customName, elementNumber] = elements;
     another_array = [...Array(elementNumber).keys()].forEach((e, i) => {
-        obj = document.createElement("div")
-        obj.classList.add("card")
-        obj.classList.add("lazy")
-        obj.setAttribute("data-src", `./assets/thumbnail/photography/${path}/${i+1}.jpg`);
-        contentDiv.appendChild(obj)
+        createCard(contentDiv, `./assets/thumbnail/photography/${path}/${i+1}.jpg`, customName != "" ? customName.replace(/{{i}}/g, (i + 1)) : null)
     })
 })
 
@@ -37,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     image.addEventListener("click", (e) => {
                         src = e.target.style["background-image"].replace(/^url\("(.*)"\)$/gm, `$1`)
                         console.log(src)
-                        if (!src.startsWith("./")) return;
+                        if (!src.startsWith("./") || e.target.classList.contains("no-zoom")) return;
                         toggleOverlay(src.replace(/thumbnail/, "img"))
                     });
                     imageObserver.unobserve(image);
