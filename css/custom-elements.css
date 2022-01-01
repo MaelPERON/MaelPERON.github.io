@@ -1,6 +1,16 @@
 /* Custom Elements */
 
 
+/* Navbar */
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--primary);
+}
+
+
 /* Spacers */
 
 .spacer {
