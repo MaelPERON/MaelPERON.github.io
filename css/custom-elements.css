@@ -42,6 +42,14 @@
     margin: 0 1.5rem;
 }
 
+.navbar:hover {
+    width: 16rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
 
 /* Spacers */
 
