@@ -2,6 +2,16 @@
 
 /* HTML elements */
 
+:root {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    --primary: #EB3B5A;
+    --primary-2: #d34687;
+    --primary-3: #AA5AA3;
+    --secondary: white;
+    --background: #001220;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -11,12 +21,6 @@ body {
     color: var(--secondary);
     min-height: 100vh;
     scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
-    --primary: #EB3B5A;
-    --primary-2: #d34687;
-    --primary-3: #AA5AA3;
-    --secondary: white;
-    --background: #001220;
     overflow-x: hidden;
 }
 
