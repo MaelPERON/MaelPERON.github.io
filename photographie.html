@@ -108,19 +108,24 @@
     <script src="js/scripts.js"></script>
     <script src="js/content.js"></script>
     <script>
-        /* contentDiv = document.querySelector(".content");
-                                                                                                                                        array = [
-                                                                                                                                            ["dissociation", "Dissociation #{{i}}", 3],
-                                                                                                                                            ["night", "", 8],
-                                                                                                                                            ["pierres et roches", "", 6],
-                                                                                                                                            ["setup", "", 2],
-                                                                                                                                            ["verres", "", 6],
-                                                                                                                                            ["others", "", 1]
-                                                                                                                                        ].forEach(elements => {
-                                                                                                                                            [path, customName, elementNumber] = elements;
-                                                                                                                                            another_array = [...Array(elementNumber).keys()].forEach((e, i) => {
-                                                                                                                                                createCard(contentDiv, `./assets/thumbnail/photography/${path}/${i+1}.jpg`, customName != "" ? customName.replace(/{{i}}/g, (i + 1)) : null)
-                                                                                                                                            })
+        contentDiv = document.querySelector(".collections");
+        content = [
+                ["dissociation", undefined, undefined, 3],
+                ["night", "photos de nuit", undefined, 8],
+                ["pierres et roches", undefined, undefined, 6],
+                ["setup", undefined, undefined, 2],
+                ["verres", undefined, undefined, 6],
+                ["others", "autres", undefined, 1]
+            ].forEach(elements => {
+                    [folder, displayName, description, elementNumber] = elements
+                    collection = createElementFromHTML(`<div class="collection"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
+                    grid = createElementFromHTML(`<div class="grid"></div>`)
+            cards = [...Array(elementNumber).keys()].forEach((e, i) => {
+                createCard(grid, `./assets/thumbnail/photography/${folder}/${i+1}.jpg`, null)
+            });
+            collection.appendChild(grid)
+            contentDiv.appendChild(collection)
+        })
                                                                                                                                         }) */
     </script>
 </body>
