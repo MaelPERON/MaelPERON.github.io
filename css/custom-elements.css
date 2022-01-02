@@ -30,6 +30,21 @@
     height: 5rem;
     color: var(--secondary);
     text-decoration: none;
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    background: var(--primary-3);
+    margin-right: -1.5rem;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.nav-link>span {
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover>span {
+    transform: translateX(0.5rem);
 }
 
 .link-text {
