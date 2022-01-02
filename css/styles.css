@@ -101,4 +101,13 @@ body::-webkit-scrollbar-thumb {
     .content {
         flex-direction: column;
     }
+    .presentation {
+        margin: 0;
+        margin-right: -1rem;
+        margin-left: -2rem;
+    }
+    .presentation p {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
