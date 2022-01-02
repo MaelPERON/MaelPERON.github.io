@@ -71,8 +71,8 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
-    padding: 200px;
+    gap: 5rem;
+    padding: 15rem;
 }
 
 .presentation {
