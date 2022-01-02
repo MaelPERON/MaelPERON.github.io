@@ -77,6 +77,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .presentation {
+    width: 100%;
     margin: 3rem;
     padding: 1rem;
     background-color: var(--primary);
