@@ -77,9 +77,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .presentation {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    margin: 3rem;
+    padding: 1rem;
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+.presentation h1 {
+    padding: 1rem;
+    background-color: var(--background);
+    margin-left: -1rem;
+    border-radius: 0 0 100px 0;
+}
+
+.presentation p {
+    text-indent: 3rem;
 }
 
 @media only screen and (max-width: 900px) {
