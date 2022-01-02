@@ -53,31 +53,3 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: var(--background);
 }
-
-
-/* Header */
-
-.main {
-    width: auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 5rem;
-    margin-right: 1rem;
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin-left: 1rem;
-}
-
-.presentation {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
