@@ -55,6 +55,8 @@
 .nav-link svg {
     width: 2rem;
     margin: 0 1.5rem;
+    rotate: 0deg;
+    transition: .4s cubic-bezier(.45, .05, .55, .95);
 }
 
 .navbar:hover {
@@ -63,6 +65,10 @@
 
 .navbar:hover .link-text {
     display: block;
+}
+
+.nav-link:hover svg {
+    rotate: 360deg;
 }
 
 
