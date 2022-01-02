@@ -86,10 +86,6 @@
     width: 40px;
 }
 
-.fa>i>svg {
-    color: var(--primary);
-}
-
 .card {
     display: flex;
     flex-direction: column;
