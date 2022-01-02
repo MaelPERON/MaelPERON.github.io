@@ -10,6 +10,7 @@
     --primary-3: #AA5AA3;
     --secondary: white;
     --background: #001220;
+    --transition-speed: .3s ease;
 }
 
 body {
