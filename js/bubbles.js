@@ -1,4 +1,9 @@
 root = document.querySelector("#particles")
+particles = []
+
+function randomNumber(min, max, r = 2) {
+    return (Math.floor(Math.random() * (max - min)) + min).toFixed(r)
+}
 
 class Hexagon {
     constructor() {
