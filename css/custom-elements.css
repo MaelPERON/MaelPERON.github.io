@@ -56,15 +56,29 @@
 
 @media only screen and (max-width: 900px) {
     .navbar {
+        display: none;
         top: 0;
         width: 100vw;
-        height: 5rem;
+        height: 100%;
     }
     .navbar-nav {
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+    .nav-item {
+        width: 62.5%;
+        display: flex;
+        border-bottom: 1px solid;
     }
     .nav-link {
-        justify-content: center;
+        margin: 0 2rem 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .link-text {
+        display: block;
     }
 }
 
