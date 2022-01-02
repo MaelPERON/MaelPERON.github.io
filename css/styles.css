@@ -81,7 +81,3 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     gap: 50px;
 }
-
-h1 {
-    margin-top: 0;
-}
