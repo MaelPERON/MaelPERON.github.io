@@ -46,24 +46,6 @@ overlay.addEventListener("click", (e) => {
     }
 })
 
-// Dessin Académique
-// Perspective
-// Photographie
-contentDiv = document.querySelector("#photography > .content");
-array = [
-    ["dissociation", "Dissociation #{{i}}", 3],
-    ["night", "", 8],
-    ["pierres et roches", "", 6],
-    ["setup", "", 2],
-    ["verres", "", 6],
-    ["others", "", 1]
-].forEach(elements => {
-    [path, customName, elementNumber] = elements;
-    another_array = [...Array(elementNumber).keys()].forEach((e, i) => {
-        createCard(contentDiv, `./assets/thumbnail/photography/${path}/${i+1}.jpg`, customName != "" ? customName.replace(/{{i}}/g, (i + 1)) : null)
-    })
-})
-
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
 
 document.addEventListener("DOMContentLoaded", function() {
