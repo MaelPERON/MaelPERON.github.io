@@ -1,97 +1,6 @@
 /* Custom Elements */
 
 
-/* Navbar */
-
-.navbar {
-    position: fixed;
-    background-color: var(--primary);
-}
-
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-item {
-    width: 100%;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: var(--transition-speed);
-}
-
-.nav-link:hover {
-    background: var(--primary-3);
-}
-
-.nav-link>span {
-    transition: var(--transition-speed);
-}
-
-.link-text {
-    display: none;
-    margin-left: 1rem;
-}
-
-.nav-link svg {
-    width: 2rem;
-    margin: 0 1.5rem;
-    rotate: 0deg;
-    transition: .4s cubic-bezier(.45, .05, .55, .95);
-}
-
-.nav-link:hover svg {
-    rotate: 360deg;
-}
-
-@media only screen and (max-width: 900px) {
-    .navbar {
-        top: 0;
-        width: 100vw;
-        height: 5rem;
-    }
-    .navbar-nav {
-        flex-direction: row;
-    }
-    .nav-link {
-        justify-content: center;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .navbar {
-        width: 5rem;
-        height: 100vh;
-    }
-    .navbar-nav {
-        flex-direction: column;
-    }
-    .nav-link:hover {
-        margin-right: -1.5rem;
-        border-radius: 0px 10px 10px 0px;
-    }
-    .navbar:hover {
-        width: 16rem;
-    }
-    .nav-link:hover>span {
-        transform: translateX(0.5rem);
-    }
-    .navbar:hover .link-text {
-        display: block;
-    }
-}
-
-
 /* Spacers */
 
 .spacer {
@@ -175,10 +84,6 @@
 .fa {
     display: block;
     width: 40px;
-}
-
-.fa>i>svg {
-    color: var(--primary);
 }
 
 .card {

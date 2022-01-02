@@ -12,22 +12,38 @@ function createCard(contentDiv, path, span = null) {
     return obj;
 }
 
-// Dessin Académique
-// Perspective
-// Photographie
-contentDiv = document.querySelector("#photography > .content");
-array = [
-    ["dissociation", "Dissociation #{{i}}", 3],
-    ["night", "", 8],
-    ["pierres et roches", "", 6],
-    ["setup", "", 2],
-    ["verres", "", 6],
-    ["others", "", 1]
-].forEach(elements => {
-    [path, customName, elementNumber] = elements;
-    another_array = [...Array(elementNumber).keys()].forEach((e, i) => {
-        createCard(contentDiv, `./assets/thumbnail/photography/${path}/${i+1}.jpg`, customName != "" ? customName.replace(/{{i}}/g, (i + 1)) : null)
-    })
+overlay = document.getElementById("overlay")
+imageWrapper = document.querySelector("#overlay > .imageWrapper")
+watchingImage = false;
+
+function toggleOverlay(src = "") {
+    if (watchingImage) {
+        overlay.style.display = "none"
+        imageWrapper.removeChild(imageWrapper.querySelector("img"));
+        document.body.style.overflow = "";
+        watchingImage = false;
+    } else {
+        overlay.style.display = "block"
+        overlay.style.top = `${window.scrollY}px`
+        obj = document.createElement("img")
+        obj.setAttribute("src", src)
+        imageWrapper.appendChild(obj)
+        document.body.style.overflow = "hidden"
+        watchingImage = true;
+    }
+}
+
+document.addEventListener("keyup", e => {
+    console.log(e.key)
+    if (e.key == "Escape" && watchingImage) {
+        toggleOverlay()
+    }
+})
+
+overlay.addEventListener("click", (e) => {
+    if (e.target.nodeName.toLowerCase() !== "img" && watchingImage) {
+        toggleOverlay()
+    }
 })
 
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
