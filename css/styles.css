@@ -31,6 +31,7 @@ hr {
 }
 
 code {
+    color: var(--background);
     padding: 0 4px;
     border-radius: 3px;
     font-weight: bold;
@@ -42,7 +43,6 @@ code.background {
 }
 
 code.gradient {
-    color: var(--background);
     background-image: linear-gradient(90deg, var(--primary-2), var(--primary));
 }
 
