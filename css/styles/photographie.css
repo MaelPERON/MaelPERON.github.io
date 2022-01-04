@@ -14,13 +14,17 @@
     margin: 0;
 }
 
+.collections {
+    width: 100%;
+}
+
 .collection h1 {
     text-transform: capitalize;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     padding: 50px;
     gap: 1rem;
 }
