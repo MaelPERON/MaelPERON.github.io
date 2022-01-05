@@ -93,6 +93,16 @@
             <div class="presentation" style="width: 80vw;">
                 <h1>📷 Photographie</h1>
             </div>
+            <div id="summary">
+                <h2>Sommaire</h2>
+                <ul class="summary-nav">
+                    <!-- <li class="summary-item">
+                        <a href="#dissociation" class="summary-link">
+                            <span>Texte</span>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
             <div class="collections">
                 <!-- <div class="collection">
                     <h2>Collection's Name</h2>
@@ -121,7 +131,8 @@
                 ["others", "autres", undefined, 1]
             ].forEach(elements => {
                     [folder, displayName, description, elementNumber] = elements
-                    collection = createElementFromHTML(`<div class="collection"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
+                    collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
+                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>#${displayName != undefined ? displayName : folder}</span></a></li>`))
                     grid = createElementFromHTML(`<div class="grid"></div>`)
             cards = [...Array(elementNumber).keys()].forEach((e, i) => {
                 createCard(grid, `./assets/thumbnail/photography/${folder}/${i+1}.jpg`, null)
