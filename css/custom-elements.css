@@ -215,3 +215,9 @@
 .summary-link:hover svg {
     transform: rotate(360deg);
 }
+
+@media only screen and (max-width: 900px) {
+    .summary-link span {
+        display: none;
+    }
+}
