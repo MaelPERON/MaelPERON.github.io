@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         src = e.target.style["background-image"].replace(/^url\("(.*)"\)$/gm, `$1`)
                         console.log(src)
                         if (!src.startsWith("./") || e.target.classList.contains("no-zoom")) return;
-                        toggleOverlay(src.replace(/thumbnail/, "img"))
+                        toggleOverlay(src.replace(/thumbnail/, "images"))
                     });
                     imageObserver.unobserve(image);
                 }
