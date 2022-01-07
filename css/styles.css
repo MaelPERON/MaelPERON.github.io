@@ -25,6 +25,20 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a.link {
+    color: var(--primary-3);
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 hr {
     border: none;
     border-bottom: 2px dashed var(--primary);
