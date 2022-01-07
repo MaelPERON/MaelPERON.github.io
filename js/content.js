@@ -12,8 +12,8 @@ function createCard(contentDiv, path, span = null) {
     return obj;
 }
 
-function createA(link, classes = []) {
-    return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer"></a>`;
+function createA(link, child, classes = []) {
+    return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer">${child}</a>`;
 }
 
 overlay = document.getElementById("overlay")
