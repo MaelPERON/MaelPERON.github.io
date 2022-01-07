@@ -39,6 +39,22 @@ a:hover {
     text-decoration: underline;
 }
 
+a.pdf {
+    display: flex;
+    align-items: center;
+}
+
+a.pdf:before {
+    display: block;
+    margin-right: 0.5rem;
+    content: "";
+    background-image: url('../assets/svg/pdf.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 hr {
     border: none;
     border-bottom: 2px dashed var(--primary);
