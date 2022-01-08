@@ -132,34 +132,45 @@
         content = [
                 // id, displayName, description, content:
                 ["minecraft", "Minecraft", '<p>Minecraft représente - de loin - mon activité de création principale après celles de l\'école.<br>De l\'animation au scénario, en passant par le game design et la modélisation 3d, je touche aux diverses facettes disponibles dans la célèbre oeuvre vidéoludique.</p>', [
-                        ["animation_modelisation", "Animation et Modélisation 3D", '<p>Ceci est une <code class="gradient">belle description</code>.</p>', [
-                            "lien vidéo"
-                        ]],
-                        ["test", "foobar", undefined, []]
-                    ],
-                    ["b", undefined, undefined, undefined],
-                    ["c", undefined, undefined, undefined]
-                ]
+                    ["animation_modelisation", "Animation et Modélisation 3D", '<p>Ceci est une <code class="gradient">belle description</code>.</p>', [
+                        ["./files/photography/dissociation/images/1.jpg"]
+                    ]],
+                    ["test", "foobar", undefined, []]
+                ]],
+                // id, displayName, description, directory, elements || elements_array
+                ["videos_lycee", "Vidéos Lycées", "<p>Ensemble de vidéos crées à l'occasion d'exercices demandés au lycée.</p>", "lycee", 1]
             ].forEach(elements => {
-                    [id, displayName, description, content] = elements
+                    if (elements.length == 4)[id, displayName, description, content] = elements;
+                    if (elements.length == 5)[id, displayName, description, path, content] = elements;
+                    mode = (typeof path == "undefined") ? "subcontent" : "cards"
                     seperation = document.createElement("hr")
                     collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
                     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
-                    content.forEach((e, i) => {
-                        if(Array.isArray(e)){ // Subcontent
+                    if(!Array.isArray(content)) content = [...Array(content).keys()];
+
+                    if(mode == "subcontent"){
+                        content.forEach((e, i) => {
                             [id, displayName, description, content] = e
                             collection.appendChild(createElementFromHTML(`<h2 id="${id}">${displayName != undefined ? displayName : id}</h2>`))
                             if(description) collection.appendChild(createElementFromHTML(description))
-                            content.forEach(e => {
-
+                            grid = createElementFromHTML(`<div class="grid"></div>`)
+                            content.forEach(f => {
+                                if(Array.isArray(f)){
+                                    [path, span] = f;
+                                    createCard(grid, path, span)
+                                } else {
+                                    grid.appendChild(createVideo(f, ["card"]))
+                                }
                             })
-                        } else { // Cards
-
-                        }
-                        // grid = createElementFromHTML(`<div class="grid"></div>`)
-                        // grid.appendChild(createElementFromHTML(`<iframe class="card" src="${e}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`))
-                        // collection.appendChild(grid)
-                    });
+                            collection.appendChild(grid)
+                        });
+                    } else if(mode == "cards") {
+                        grid = createElementFromHTML('<div class="grid"></div>')
+                        content.forEach((e,i) => {
+                            createCard(grid, `./files/others/${path}/thumbnails/${i+1}.jpg`)
+                        })
+                        collection.appendChild(grid)
+                    }
                     collection.appendChild(seperation)
                     contentDiv.appendChild(collection)
         })
