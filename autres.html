@@ -142,13 +142,27 @@
                     ["animation_modelisation", "Animation et Modélisation 3D", '<p>Ceci est une <code class="gradient">belle description</code>.</p>', [
                         ["./files/photography/dissociation/images/1.jpg"]
                     ]],
-                    ["test", "foobar", undefined, []]
+                    ["jam", "Games JAM", `<p></p>`, []],
+                    ["textures", "Textures", undefined, []]
                 ]],
-                ["videos_lycee", "Vidéos Lycées", "<p>Ensemble de vidéos crées à l'occasion d'exercices demandés au lycée.</p>", "lycee", 1]
+                ['projets', undefined, undefined, [
+                    ["trajet_matinal", "Trajet Matinal", undefined, []],
+                    ["portfolio", undefined, undefined, []],
+                    ["videos", "Vidéos Lycée", undefined, []]
+                ]],
+                ['workshops', undefined, undefined, [
+                    ["croquis", undefined, undefined, []],
+                    ["couleur", undefined, undefined, []],
+                    ["atelier_artistique", undefined, undefined, []],
+                    ["design_graphique", undefined, undefined, []],
+                    ["projet_architectural", undefined, undefined, []],
+                    ["skin", undefined, undefined, []],
+                    ["anatomie", undefined, undefined, []]
+                ]]
             ].forEach(elements => {
                     if (elements.length == 4)[id, displayName, description, content] = elements;
                     if (elements.length == 5)[id, displayName, description, path, content] = elements;
-                    mode = (typeof path == "undefined") ? "subcontent" : "cards"
+                    mode = (elements.length == 4) ? "subcontent" : "cards"
                     collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
                     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
                     if(!Array.isArray(content)) content = [...Array(content).keys()];
@@ -157,7 +171,7 @@
                         content.forEach((e, i) => {
                             [id, displayName, description, content] = e // id, displayName, description, content
                             collection.appendChild(createElementFromHTML(`<h2 id="${id}">${displayName != undefined ? displayName : id}</h2>`))
-                            document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item second" style="padding-right: 2rem;"><a href="#${id}"><span>${displayName != undefined ? displayName : ''}</span></a></li>`))
+                            document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item second" style="padding-right: 2rem;"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
                             if(description) collection.appendChild(createElementFromHTML(description))
                             grid = createElementFromHTML(`<div class="grid"></div>`)
                             content.forEach(f => {
