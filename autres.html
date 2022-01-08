@@ -187,7 +187,7 @@
                     } else if(mode == "cards") { // id, displayName, description, directory, elements || elements_array
                         grid = createElementFromHTML('<div class="grid"></div>')
                         content.forEach((e,i) => {
-                            createCard(grid, `./files/others/${path}/thumbnails/${i+1}.jpg`)
+                            createCard(grid, `./files/others/${path}/thumbnails/${i+1}.jpg`, isNaN(e) ? e : null)
                         })
                         collection.appendChild(grid)
                     }
