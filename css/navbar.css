@@ -51,6 +51,35 @@
     rotate: 360deg;
 }
 
+#navbar-button {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    background-color: var(--primary-3);
+    border-radius: 10px;
+}
+
+#nav-button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-button svg {
+    pointer-events: none;
+    transition: var(--transition-speed)
+}
+
+#nav-button svg.fa-times {
+    display: none;
+}
+
 @media only screen and (max-width: 900px) {
     .navbar {
         display: none;
@@ -75,6 +104,9 @@
         width: 100%;
     }
     .link-text {
+        display: block;
+    }
+    #navbar-button {
         display: block;
     }
 }
