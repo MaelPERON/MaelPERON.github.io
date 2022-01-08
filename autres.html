@@ -144,7 +144,6 @@
                     ]],
                     ["test", "foobar", undefined, []]
                 ]],
-                // id, displayName, description, directory, elements || elements_array
                 ["videos_lycee", "Vidéos Lycées", "<p>Ensemble de vidéos crées à l'occasion d'exercices demandés au lycée.</p>", "lycee", 1]
             ].forEach(elements => {
                     if (elements.length == 4)[id, displayName, description, content] = elements;
@@ -155,9 +154,9 @@
                     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
                     if(!Array.isArray(content)) content = [...Array(content).keys()];
 
-                    if(mode == "subcontent"){
+                    if(mode == "subcontent"){ // id, displayName, description, content
                         content.forEach((e, i) => {
-                            [id, displayName, description, content] = e
+                            [id, displayName, description, content] = e // id, displayName, description, content
                             collection.appendChild(createElementFromHTML(`<h2 id="${id}">${displayName != undefined ? displayName : id}</h2>`))
                             if(description) collection.appendChild(createElementFromHTML(description))
                             grid = createElementFromHTML(`<div class="grid"></div>`)
@@ -171,7 +170,7 @@
                             })
                             collection.appendChild(grid)
                         });
-                    } else if(mode == "cards") {
+                    } else if(mode == "cards") { // id, displayName, description, directory, elements || elements_array
                         grid = createElementFromHTML('<div class="grid"></div>')
                         content.forEach((e,i) => {
                             createCard(grid, `./files/others/${path}/thumbnails/${i+1}.jpg`)
