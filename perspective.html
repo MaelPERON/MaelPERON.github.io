@@ -115,11 +115,11 @@
     <script>
         contentDiv = document.querySelector(".collections");
         content = [
-                ["temp", "Sélection", undefined, 3]
+                ["temp", "sélection", undefined, 3]
             ].forEach(elements => {
                     [folder, displayName, description, files] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>#${displayName != undefined ? displayName : folder}</span></a></li>`))
+                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>${displayName != undefined ? displayName : folder}</span></a></li>`))
                     grid = createElementFromHTML(`<div class="grid"></div>`)
             cards = Array.isArray(files) ? files : [...Array(files).keys()]
             cards.forEach((e, i) => {

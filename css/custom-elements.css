@@ -183,6 +183,15 @@
     color: var(--secondary);
 }
 
+.summary-item a span {
+    text-transform: capitalize;
+}
+
+.summary-item a span::before {
+    content: "#";
+    padding-right: 0.25rem;
+}
+
 #return-to-summary {
     position: fixed;
     bottom: 1rem;

@@ -115,11 +115,11 @@
     <script>
         contentDiv = document.querySelector(".collections");
         content = [
-                ["apprentie_tueuse", "Apprentie Tueuse", `<p>L’exercice consiste à transformer une <code class="gradient">histoire imaginée</code> en un <code class="gradient">storyboard imagé</code>. Ce storyboard sera ensuite utilisé pour tourner les plans listés dedans puis les monter et <code class="gradient">obtenir un très court</code>.<hr>Plus d'informations:<br><br>${createA('./files/video/apprentie_tueuse/kezako.pdf', 'Kezako?', ['link','pdf'])}<br>${createA('./files/video/apprentie_tueuse/storyboard.pdf', 'Storyboard', ['link','pdf'])}<p>`, ["https://www.youtube-nocookie.com/embed/jHCJA3gBk3Y"]]
+                ["apprentie_tueuse", "apprentie tueuse", `<p>L’exercice consiste à transformer une <code class="gradient">histoire imaginée</code> en un <code class="gradient">storyboard imagé</code>. Ce storyboard sera ensuite utilisé pour tourner les plans listés dedans puis les monter et <code class="gradient">obtenir un très court</code>.<hr>Plus d'informations:<br><br>${createA('./files/video/apprentie_tueuse/kezako.pdf', 'Kezako?', ['link','pdf'])}<br>${createA('./files/video/apprentie_tueuse/storyboard.pdf', 'Storyboard', ['link','pdf'])}<p>`, ["https://www.youtube-nocookie.com/embed/jHCJA3gBk3Y"]]
             ].forEach(elements => {
                     [id, displayName, description, videos] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>#${displayName != undefined ? displayName : id}</span></a></li>`))
+                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
                     grid = createElementFromHTML(`<div class="grid"></div>`)
             videos.forEach((e, i) => {
                 grid.appendChild(createElementFromHTML(`<iframe class="card" src="${e}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`))
