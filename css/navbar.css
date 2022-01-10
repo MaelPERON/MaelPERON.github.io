@@ -3,6 +3,7 @@
 .navbar {
     position: fixed;
     background-color: var(--primary);
+    z-index: 999;
 }
 
 .navbar-nav {
