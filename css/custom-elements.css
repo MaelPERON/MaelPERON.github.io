@@ -102,6 +102,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: grayscale(1);
 }
 
 .card span {
@@ -120,6 +121,7 @@
     cursor: zoom-in;
     box-shadow: -0.3rem 0.3rem 0 var(--primary);
     transform: translate(0.3rem, -0.3rem);
+    filter: grayscale(0);
 }
 
 .card:hover span {
