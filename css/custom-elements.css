@@ -102,6 +102,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+div.card {
     filter: grayscale(1);
 }
 
