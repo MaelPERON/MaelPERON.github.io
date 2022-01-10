@@ -44,10 +44,23 @@ function toggleOverlay(src = "") {
     }
 }
 
+function nextImageOverlay(n){
+    img = imageWrapper.querySelector("img");
+    [ path, directory, fileName, extension] = /(.*\/)([^\/]*)\.(png|jpg)$/g.exec(img.getAttribute("src"))
+    fileNumber = parseInt(fileName)
+    if(!isNaN(fileNumber) && (fileNumber+n) > 0){
+        src = `${directory}${parseInt(fileName)+n}.${extension}`
+        imageExist(src).then(b => {
+            if(b) img.setAttribute("src", src)
+        }).catch(err => {})
+    }
+}
+
 document.addEventListener("keyup", e => {
-    console.log(e.key)
     if (e.key == "Escape" && watchingImage) {
         toggleOverlay()
+    } else if(["ArrowLeft", "ArrowRight"].includes(e.key) && watchingImage){
+        nextImageOverlay(e.key == "ArrowLeft" ? -1 : 1)
     }
 })
 
