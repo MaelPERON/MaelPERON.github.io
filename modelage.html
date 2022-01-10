@@ -123,13 +123,14 @@
         contentDiv = document.querySelector(".collections");
         content = [
                 ["abstract", undefined, undefined, [
+                    "Esquisse",
                     null,
                     "Traçage",
                     "Découpage",
                     "Sculpt",
                     "Final"
                 ]],
-                ["elder_guardian", "elder guardian", undefined, 3]
+                ["elder_guardian", "elder guardian", undefined, 4]
             ].forEach(elements => {
                     [folder, displayName, description, files] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);

@@ -138,26 +138,47 @@
         contentDiv = document.querySelector(".collections");
         content = [
                 // id, displayName, description, content:
-                ["minecraft", "Minecraft", '<p>Minecraft représente - de loin - mon activité de création principale après celles de l\'école.<br>De l\'animation au scénario, en passant par le game design et la modélisation 3d, je touche aux diverses facettes disponibles dans la célèbre oeuvre vidéoludique.</p>', [
-                    ["animation_modelisation", "Animation et Modélisation 3D", '<p>Ceci est une <code class="gradient">belle description</code>.</p>', [
-                        ["./files/photography/dissociation/images/1.jpg"]
+                ["animation", "Animation 2D/3D", undefined, [
+                    ["2d", undefined, undefined, [
+                        "0ywOVflOL4g"
                     ]],
-                    ["jam", "Games JAM", `<p></p>`, []],
-                    ["textures", "Textures", undefined, []]
+                    ["3d", undefined, undefined, [
+                        ['./files/others/minecraft/animation/craquage.gif'],
+                        '6WQtLmp6-VI',
+                        'aywnhSiHcyE',
+                        'HObTNo8zZR4',
+                        'C1k-j27y2xU'
+                    ]]
+                ]],
+                ["minecraft", "Minecraft", '<p>Minecraft représente - de loin - mon activité de création principale après celles de l\'école.<br>De l\'animation au scénario, en passant par le game design et la modélisation 3d, je touche aux diverses facettes disponibles dans la célèbre oeuvre vidéoludique.</p>', [
+                    ["alpha", "Projet Alpha", undefined, []],
+                    ["jam", "Games JAM", `<p>« Une game jam est un hackathon avec pour thème principal les jeux vidéo, mais pouvant aussi porter sur les jeux au sens large.<br>Les participants, groupés en équipes, doivent créer un jeu dans un temps limité, généralement le temps d'un week-end, sur 24 à 72 heures. »<br>${createA('./files/others/minecraft/jam/game_jams.pdf', 'Game Jams', ['link','pdf'])}</p>`, []],
+                    ["images", "Rendus 3D", undefined, [
+                        ['./files/others/minecraft/rendus/1.png'],
+                        ['./files/others/minecraft/rendus/2.png'],
+                        ['./files/others/minecraft/rendus/3.png'],
+                        ['./files/others/minecraft/rendus/4.png'],
+                        ['./files/others/minecraft/rendus/5.png'],
+                        ['./files/others/minecraft/rendus/6.png'],
+                        ['./files/others/minecraft/rendus/7.png']
+                    ]]
                 ]],
                 ['projets', undefined, undefined, [
-                    ["trajet_matinal", "Trajet Matinal", undefined, []],
-                    ["portfolio", undefined, undefined, []],
-                    ["videos", "Vidéos Lycée", undefined, []]
+                    ["trajet_matinal", "Trajet Matinal", `<p>Chaque jour de semaine, c’est la même chose. Je me réveille le matin, consomme mon petit déjeuner, prends mon sac et pars avec mon vélo en direction de l’école.<br>C’est un trajet somme toute banal, mais dans son essence, c’est celui qui me permet de me rendre à l’école - sans vouloir enfoncer des portes ouvertes -.<br>Bien qu’il s’agisse d’une routine, chaque trajet est unique. Je peux très bien décider de rouler à une vitesse différente, être arrêté par des feux tricolores spécifiques, être ralenti par cette voiture qui me coupe le passage, bref: je ne vis pas le même parcours chaque matin.<br>Ce moment répétitif, alors singulier, mais possédant une infinité d’itérations, je vous le présente dans ce que je peux ressentir.<br>En résumé, je vous propose de vivre mon trajet matinal.<br>${createA('./files/others/projets/trajet_matinal.pdf', 'Trajet Matinal', ['link','pdf'])}</p>`, []],
+                    ["videos", "Vidéos Lycée", undefined, [
+                        'I3Rgb5IQ6hE',
+                        'yaKvFwaagIc',
+                        'ijZKdsuwTcI',
+                        'hZudgwieSYQ',
+                        'kFUyhP5neGc',
+                        'IruA2kYLm2o',
+                        'W6dYMuiOwSU'
+                    ]]
                 ]],
                 ['workshops', undefined, undefined, [
-                    ["croquis", undefined, undefined, []],
-                    ["couleur", undefined, undefined, []],
-                    ["atelier_artistique", undefined, undefined, []],
-                    ["design_graphique", undefined, undefined, []],
-                    ["projet_architectural", undefined, undefined, []],
+                    ["couleur", "Théorie de la couleur", undefined, []],
+                    ["atelier_artistique", "Atelier Artistique", undefined, []],
                     ["skin", undefined, undefined, []],
-                    ["anatomie", undefined, undefined, []]
                 ]]
             ].forEach(elements => {
                     if (elements.length == 4)[id, displayName, description, content] = elements;

@@ -123,11 +123,10 @@
         contentDiv = document.querySelector(".collections");
         content = [
                 ["dissociation", undefined, "<code class='gradient'>Hello, friends.</code>", 3],
-                ["night", "photos de nuit", undefined, 8],
-                ["pierres et roches", undefined, undefined, 6],
-                ["setup", undefined, undefined, 2],
-                ["verres", undefined, undefined, 6],
-                ["others", "autres", undefined, 1]
+                ["ciel_rouge", "Ciel Rouge", undefined, 2],
+                ["light", "Light Painting", undefined, 2],
+                ["portraits", undefined, undefined, 3],
+                ["autres", undefined, undefined, 6]
             ].forEach(elements => {
                     [folder, displayName, description, elementNumber] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
