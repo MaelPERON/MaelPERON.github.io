@@ -27,3 +27,12 @@ function toggleNavbar(button) {
     }
 
 }
+
+function imageExist(src) {
+    return new Promise((resolve, reject) => {
+        let img = new Image()
+        img.onload = () => resolve(img.height != 0)
+        img.onerror = reject
+        img.src = src
+    })
+}
