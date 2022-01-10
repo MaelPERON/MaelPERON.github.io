@@ -21,18 +21,21 @@ function createA(link, child, classes = []) {
 }
 
 overlay = document.getElementById("overlay")
+returnToSummary = document.getElementById("return-to-summary")
 imageWrapper = document.querySelector("#overlay > .imageWrapper")
 watchingImage = false;
 
 function toggleOverlay(src = "") {
     if (watchingImage) {
         overlay.style.display = "none"
+        returnToSummary.style.display = "block"
         imageWrapper.removeChild(imageWrapper.querySelector("img"));
         document.body.style.overflow = "";
         watchingImage = false;
     } else {
         overlay.style.display = "block"
         overlay.style.top = `${window.scrollY}px`
+        returnToSummary.style.display = "none"
         obj = document.createElement("img")
         obj.setAttribute("src", src)
         imageWrapper.appendChild(obj)
