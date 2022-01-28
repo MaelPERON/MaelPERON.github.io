@@ -138,6 +138,19 @@
         contentDiv = document.querySelector(".collections");
         content = [
                 // id, displayName, description, content:
+                ['workshops', undefined, undefined, [
+                    ["couleur", "Théorie de la couleur", `<p>${createA('./files/others/Couleur.pdf', 'Théorie de la couleur', ['link','pdf'])}</p>`, []],
+                    ["skin", "Skin", undefined, [
+                        ['./files/others/skin/thumbnails/1.jpg', 'Le Roi déchu'],
+                        ['./files/others/skin/thumbnails/2.jpg', '& DID']
+                    ]],
+                    ["atelier_artistique", "Atelier Artistique", undefined, [
+                        ['./files/others/atelier_artistique/Atelier_01.jpg'],
+                        ['./files/others/atelier_artistique/Atelier_02.jpg'],
+                        ['./files/others/atelier_artistique/Atelier_03.jpg'],
+                        ['./files/others/atelier_artistique/Atelier_04.jpg']
+                    ]],
+                ]],
                 ["animation", "Animation 2D/3D", undefined, [
                     ["2D", undefined, undefined, [
                         "0ywOVflOL4g"
@@ -189,19 +202,6 @@
                         'IruA2kYLm2o',
                         'W6dYMuiOwSU'
                     ]]
-                ]],
-                ['workshops', undefined, undefined, [
-                    ["couleur", "Théorie de la couleur", `<p>${createA('./files/others/Couleur.pdf', 'Théorie de la couleur', ['link','pdf'])}</p>`, []],
-                    ["skin", "Skin", undefined, [
-                        ['./files/others/skin/thumbnails/1.jpg', 'Le Roi déchu'],
-                        ['./files/others/skin/thumbnails/2.jpg', '& DID']
-                    ]],
-                    ["atelier_artistique", "Atelier Artistique", undefined, [
-                        ['./files/others/atelier_artistique/Atelier_01.jpg'],
-                        ['./files/others/atelier_artistique/Atelier_02.jpg'],
-                        ['./files/others/atelier_artistique/Atelier_03.jpg'],
-                        ['./files/others/atelier_artistique/Atelier_04.jpg']
-                    ]],
                 ]]
             ].forEach(elements => {
                     if (elements.length == 4)[id, displayName, description, content] = elements;
