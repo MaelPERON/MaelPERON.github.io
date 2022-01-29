@@ -151,7 +151,7 @@
                         ['./files/others/design/moodboard - salle informatique.jpg', 'Salle informatique'],
                         ['./files/others/design/vue de haut - RDC.jpg', 'Plan RDC - Vue de haut']
                     ]],
-                    ['gravure', 'Dessin et Gravure', undefined, [
+                    ['gravure', 'Dessin et Gravure', `<p>Lors de ce Workshop, il nous a été demandé de réaliser un travail de <code class="gradient">micro-édition</code>. Son objectif : mettre en place des éditions spontanées et à toutes petites échelles.<br>${createA('./files/others/Dessin Gravure.pdf', "Plus d'informations", ['link','pdf'])}</p>`, [
                         ["errance", 7],
                         ["serigraphie", 3]
                     ].map(e => [...Array(e[1]).keys()].map(i => `./files/others/gravure/${e[0]}/thumbnails/${i+1}.jpg`)).flat().map(e => [e])],
