@@ -151,6 +151,10 @@
                         ['./files/others/design/moodboard - salle informatique.jpg', 'Salle informatique'],
                         ['./files/others/design/vue de haut - RDC.jpg', 'Plan RDC - Vue de haut']
                     ]],
+                    ['gravure', 'Dessin et Gravure', undefined, [
+                        ["errance", 7],
+                        ["serigraphie", 3]
+                    ].map(e => [...Array(e[1]).keys()].map(i => `./files/others/gravure/${e[0]}/thumbnails/${i+1}.jpg`)).flat().map(e => [e])],
                     ["skin", "Skin", undefined, [
                         ['./files/others/skin/thumbnails/1.jpg', 'Le Roi déchu'],
                         ['./files/others/skin/thumbnails/2.jpg', '& DID'],
