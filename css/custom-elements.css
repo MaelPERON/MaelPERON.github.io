@@ -121,7 +121,7 @@
 .next:hover,
 .prev:focus,
 .next:focus {
-    background-color: var(--background);
+    background-color: var(--primary);
 }
 
 .prev {
