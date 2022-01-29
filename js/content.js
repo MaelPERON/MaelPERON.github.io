@@ -20,6 +20,7 @@ function createA(link, child, classes = []) {
     return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer">${child}</a>`;
 }
 
+mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
 imageWrapper = document.querySelector("#overlay > .imageWrapper")
@@ -27,12 +28,14 @@ watchingImage = false;
 
 function toggleOverlay(src = "") {
     if (watchingImage) {
+        mainDiv.style.position = "unset"
         overlay.style.display = "none"
         returnToSummary.style.display = "block"
         imageWrapper.removeChild(imageWrapper.querySelector("img"));
         document.body.style.overflow = "";
         watchingImage = false;
     } else {
+        mainDiv.style.position = "static"
         overlay.style.display = "block"
         overlay.style.top = `${window.scrollY}px`
         returnToSummary.style.display = "none"
