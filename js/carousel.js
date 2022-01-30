@@ -61,6 +61,10 @@ function createCarousel(overlaySection, images) {
     return carousel
 }
 
+function deleteCarousel(carousel){
+    return carousel.parentElement.removeChild(carousel)
+}
+
 function insertNumbers(carousel) {
     const length = carousel.querySelectorAll(".item").length;
     for (let i = 0; i < length; i++) {
