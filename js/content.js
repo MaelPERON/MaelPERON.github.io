@@ -24,6 +24,21 @@ mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
 
+document.addEventListener("toggleOverlay", (e) => {
+    options = e.detail
+    if(options.toClose){
+        document.body.style.overflow = "";
+        overlay.style.display = "none";
+        returnToSummary.style.display = "block";
+    } else {
+        carousel = createCarousel(options.overlaySection, options.cards.map(card => card.dataset.src));
+        document.body.style.overflow = "hidden";
+        overlay.style.display = "block";
+        overlay.style.top = `${window.scrollY}px`;
+        returnToSummary.style.display = "none";
+    }
+})
+
 
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
 
