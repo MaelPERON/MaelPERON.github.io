@@ -32,6 +32,7 @@ document.addEventListener("toggleOverlay", (e) => {
         returnToSummary.style.display = "block";
     } else {
         carousel = createCarousel(options.overlaySection, options.cards.map(card => card.dataset.src));
+        if(options.cardIndex) showItems(carousel, options.cardIndex)
         document.body.style.overflow = "hidden";
         overlay.style.display = "block";
         overlay.style.top = `${window.scrollY}px`;
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     image.classList.remove("lazy");
                     image.addEventListener("click", (e) => {
                         card = e.target
-                        return document.dispatchEvent(new CustomEvent('toggleOverlay', {detail: {toClose: false, cards: Array.from(card.parentElement.querySelectorAll(".card")), overlaySection: overlay.querySelector(".section")}}))
+                        return document.dispatchEvent(new CustomEvent('toggleOverlay', {detail: {toClose: false, cards: Array.from(card.parentElement.querySelectorAll(".card")), cardIndex: Array.prototype.indexOf.call(card.parentNode.children, card), overlaySection: overlay.querySelector(".section")}}))
                     })
                     imageObserver.unobserve(image);
                 }
