@@ -53,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     var image = entry.target;
                     image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
                     image.classList.remove("lazy");
+                    image.addEventListener("click", (e) => {
+                        card = e.target
+                        return document.dispatchEvent(new CustomEvent('toggleOverlay', {detail: {toClose: false, cards: Array.from(card.parentElement.querySelectorAll(".card")), overlaySection: overlay.querySelector(".section")}}))
+                    })
                     imageObserver.unobserve(image);
                 }
             });
