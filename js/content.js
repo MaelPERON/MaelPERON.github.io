@@ -20,55 +20,43 @@ function createA(link, child, classes = []) {
     return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer">${child}</a>`;
 }
 
+mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
-imageWrapper = document.querySelector("#overlay > .imageWrapper")
-watchingImage = false;
 
-function toggleOverlay(src = "") {
-    if (watchingImage) {
-        overlay.style.display = "none"
-        returnToSummary.style.display = "block"
-        imageWrapper.removeChild(imageWrapper.querySelector("img"));
+document.addEventListener("keyup", (e) => {
+    if(["ArrowRight","ArrowLeft","Escape"].includes(e.key)) e.preventDefault();
+    switch(e.key) {
+        case "ArrowRight":
+            plusItem(carousel);
+            break;
+        case "ArrowLeft":
+            minusItem(carousel);
+            break;
+        case "Escape":
+            deleteCarousel(carousel);
+            break;
+        default:
+            break;
+    }
+})
+
+document.addEventListener("toggleOverlay", (e) => {
+    options = e.detail
+    if(options.toClose){
         document.body.style.overflow = "";
-        watchingImage = false;
+        overlay.style.display = "none";
+        returnToSummary.style.display = "block";
     } else {
-        overlay.style.display = "block"
-        overlay.style.top = `${window.scrollY}px`
-        returnToSummary.style.display = "none"
-        obj = document.createElement("img")
-        obj.setAttribute("src", src)
-        imageWrapper.appendChild(obj)
-        document.body.style.overflow = "hidden"
-        watchingImage = true;
-    }
-}
-
-function nextImageOverlay(n){
-    img = imageWrapper.querySelector("img");
-    [ path, directory, fileName, extension] = /(.*\/)([^\/]*)\.(png|jpg)$/g.exec(img.getAttribute("src"))
-    fileNumber = parseInt(fileName)
-    if(!isNaN(fileNumber) && (fileNumber+n) > 0){
-        src = `${directory}${parseInt(fileName)+n}.${extension}`
-        imageExist(src).then(b => {
-            if(b) img.setAttribute("src", src)
-        }).catch(err => {})
-    }
-}
-
-document.addEventListener("keyup", e => {
-    if (e.key == "Escape" && watchingImage) {
-        toggleOverlay()
-    } else if(["ArrowLeft", "ArrowRight"].includes(e.key) && watchingImage){
-        nextImageOverlay(e.key == "ArrowLeft" ? -1 : 1)
+        carousel = createCarousel(options.overlaySection, options.cards.map(card => card.dataset.src));
+        if(options.cardIndex) showItems(carousel, options.cardIndex)
+        document.body.style.overflow = "hidden";
+        overlay.style.display = "block";
+        overlay.style.top = `${window.scrollY}px`;
+        returnToSummary.style.display = "none";
     }
 })
 
-overlay.addEventListener("click", (e) => {
-    if (e.target.nodeName.toLowerCase() !== "img" && watchingImage) {
-        toggleOverlay()
-    }
-})
 
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
 
@@ -81,15 +69,12 @@ document.addEventListener("DOMContentLoaded", function() {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     var image = entry.target;
-                    console.log(image)
                     image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
                     image.classList.remove("lazy");
                     image.addEventListener("click", (e) => {
-                        src = e.target.style["background-image"].replace(/^url\("(.*)"\)$/gm, `$1`)
-                        console.log(src)
-                        if (!src.startsWith("./") || e.target.classList.contains("no-zoom")) return;
-                        toggleOverlay(src.replace(/thumbnails/, "images"))
-                    });
+                        card = e.target
+                        return document.dispatchEvent(new CustomEvent('toggleOverlay', {detail: {toClose: false, cards: Array.from(card.parentElement.querySelectorAll(".card")), cardIndex: Array.prototype.indexOf.call(card.parentNode.children, card), overlaySection: overlay.querySelector(".section")}}))
+                    })
                     imageObserver.unobserve(image);
                 }
             });
