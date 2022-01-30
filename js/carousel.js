@@ -36,15 +36,15 @@ function createCarousel(overlaySection, images) {
         }
     })
 
-    carousel.querySelector(".prev").addEventListener("click", (e) => {
-        e.preventDefault();
-        minusItem(carousel);
-    });
-
-    carousel.querySelector(".next").addEventListener("click", (e) => {
-        e.preventDefault();
-        plusItem(carousel);
-    });
+    carousel.querySelectorAll(".carousel-button").forEach(button => {
+        button.addEventListener("click", (e) => {
+            buttonAction = button.classList.item(1)
+            e.preventDefault();
+            if(buttonAction == "exit") deleteCarousel(carousel);
+            if(buttonAction == "prev") minusItem(carousel);
+            if(buttonAction == "next") plusItem(carousel);
+        })
+    })
 
     insertDots(carousel);
 
