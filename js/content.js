@@ -23,55 +23,7 @@ function createA(link, child, classes = []) {
 mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
-imageWrapper = document.querySelector("#overlay > .imageWrapper")
-watchingImage = false;
 
-function toggleOverlay(src = "") {
-    if (watchingImage) {
-        mainDiv.style.position = "unset"
-        overlay.style.display = "none"
-        returnToSummary.style.display = "block"
-        imageWrapper.removeChild(imageWrapper.querySelector("img"));
-        document.body.style.overflow = "";
-        watchingImage = false;
-    } else {
-        mainDiv.style.position = "static"
-        overlay.style.display = "block"
-        overlay.style.top = `${window.scrollY}px`
-        returnToSummary.style.display = "none"
-        obj = document.createElement("img")
-        obj.setAttribute("src", src)
-        imageWrapper.appendChild(obj)
-        document.body.style.overflow = "hidden"
-        watchingImage = true;
-    }
-}
-
-function nextImageOverlay(n){
-    img = imageWrapper.querySelector("img");
-    [ path, directory, fileName, extension] = /(.*\/)([^\/]*)\.(png|jpg)$/g.exec(img.getAttribute("src"))
-    fileNumber = parseInt(fileName)
-    if(!isNaN(fileNumber) && (fileNumber+n) > 0){
-        src = `${directory}${parseInt(fileName)+n}.${extension}`
-        imageExist(src).then(b => {
-            if(b) img.setAttribute("src", src)
-        }).catch(err => {})
-    }
-}
-
-document.addEventListener("keyup", e => {
-    if (e.key == "Escape" && watchingImage) {
-        toggleOverlay()
-    } else if(["ArrowLeft", "ArrowRight"].includes(e.key) && watchingImage){
-        nextImageOverlay(e.key == "ArrowLeft" ? -1 : 1)
-    }
-})
-
-overlay.addEventListener("click", (e) => {
-    if (e.target.nodeName.toLowerCase() !== "img" && watchingImage) {
-        toggleOverlay()
-    }
-})
 
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
 
@@ -87,12 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log(image)
                     image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
                     image.classList.remove("lazy");
-                    image.addEventListener("click", (e) => {
-                        src = e.target.style["background-image"].replace(/^url\("(.*)"\)$/gm, `$1`)
-                        console.log(src)
-                        if (!src.startsWith("./") || e.target.classList.contains("no-zoom")) return;
-                        toggleOverlay(src.replace(/thumbnails/, "images"))
-                    });
                     imageObserver.unobserve(image);
                 }
             });
