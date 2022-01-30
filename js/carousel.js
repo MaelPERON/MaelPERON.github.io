@@ -1,34 +1,3 @@
-/* document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".carousel-container").forEach((carousel) => {
-        insertNumbers(carousel);
-
-        carousel.querySelector(".prev").addEventListener("click", (e) => {
-            e.preventDefault();
-            minusItem(carousel);
-        });
-
-        carousel.querySelector(".next").addEventListener("click", (e) => {
-            e.preventDefault();
-            plusItem(carousel);
-        });
-
-        insertDots(carousel);
-
-        carousel.querySelectorAll(".dot").forEach((dot) => {
-            dot.addEventListener("click", (e) => {
-                let item = Array.prototype.indexOf.call(
-                    e.target.parentNode.children,
-                    e.target
-                );
-
-                showItems(carousel, item);
-            });
-        });
-
-        showItems(carousel, 0);
-    });
-}); */
-
 function createCarousel(overlaySection, images) {
     carousel = createElementFromHTML(`\
     <div class="carousel-container">\
