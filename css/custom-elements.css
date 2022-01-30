@@ -103,7 +103,8 @@
 }
 
 .prev,
-.next {
+.next,
+.exit {
     width: 2rem;
     height: 2rem;
     padding: 0.3125rem;
@@ -117,15 +118,18 @@
 }
 
 .prev-svg,
-.next-svg {
+.next-svg,
+.exit-svg {
     width: 2rem;
     height: 2rem;
 }
 
 .prev:hover,
 .next:hover,
+.exit:hover,
 .prev:focus,
-.next:focus {
+.next:focus,
+.exit:focus {
     background-color: var(--primary);
 }
 
@@ -135,6 +139,11 @@
 
 .next {
     right: 0.8rem;
+}
+
+.exit {
+    top: 1rem;
+    left: 0.8rem;
 }
 
 .dots {
