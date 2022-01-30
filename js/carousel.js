@@ -67,6 +67,7 @@ function createCarousel(overlaySection, images) {
 }
 
 function deleteCarousel(carousel){
+    document.dispatchEvent(new CustomEvent("toggleOverlay", {detail: {toClose: true}}))
     return carousel.parentElement.removeChild(carousel)
 }
 
