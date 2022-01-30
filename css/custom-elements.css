@@ -151,13 +151,14 @@
     display: inline-block;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #bbb;
+    background-color: var(--secondary);
     transition: background-color 0.6s ease;
 }
 
 .dot:focus,
-.dot:hover {
-    background-color: #717171;
+.dot:hover,
+.dot.active {
+    background-color: var(--primary);
 }
 
 #overlay .carousel-container {
