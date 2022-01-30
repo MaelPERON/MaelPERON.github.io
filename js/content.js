@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     var image = entry.target;
-                    console.log(image)
                     image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
                     image.classList.remove("lazy");
                     imageObserver.unobserve(image);
