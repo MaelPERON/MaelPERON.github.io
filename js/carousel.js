@@ -20,22 +20,6 @@ function createCarousel(overlaySection, images) {
 
     insertNumbers(carousel);
 
-    document.addEventListener("keyup", (e) => {
-        switch(e.key) {
-            case "ArrowRight":
-                plusItem(carousel);
-                break;
-            case "ArrowLeft":
-                minusItem(carousel);
-                break;
-            case "Escape":
-                deleteCarousel(carousel);
-                break;
-            default:
-                break;
-        }
-    })
-
     carousel.querySelectorAll(".carousel-button").forEach(button => {
         button.addEventListener("click", (e) => {
             buttonAction = button.classList.item(1)
@@ -107,10 +91,10 @@ function plusItem(carousel) {
 
 function minusItem(carousel) {
     let item = currentItem(carousel);
-
+    
     carousel.querySelectorAll(".item")[item].previousElementSibling != null ?
-        showItems(carousel, item - 1) :
-        showItems(carousel, carousel.querySelectorAll(".item").length - 1);
+    showItems(carousel, item - 1) :
+    showItems(carousel, carousel.querySelectorAll(".item").length - 1);
 }
 
 function currentItem(carousel) {

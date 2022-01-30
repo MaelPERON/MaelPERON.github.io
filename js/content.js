@@ -24,6 +24,23 @@ mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
 
+document.addEventListener("keyup", (e) => {
+    if(["ArrowRight","ArrowLeft","Escape"].includes(e.key)) e.preventDefault();
+    switch(e.key) {
+        case "ArrowRight":
+            plusItem(carousel);
+            break;
+        case "ArrowLeft":
+            minusItem(carousel);
+            break;
+        case "Escape":
+            deleteCarousel(carousel);
+            break;
+        default:
+            break;
+    }
+})
+
 document.addEventListener("toggleOverlay", (e) => {
     options = e.detail
     if(options.toClose){
