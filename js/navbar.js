@@ -31,3 +31,5 @@ function deleteNavbar() {
         obj.firstChild.remove()
     }
 }
+
+window.addEventListener("load", () => { createNavbar(); })
