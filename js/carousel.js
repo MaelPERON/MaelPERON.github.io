@@ -3,7 +3,7 @@ function createCarousel(overlaySection, images) {
     <div class="carousel-container">\
         ${images.map(image => {
             return `<div class="item" style="display: none">\
-                <div class="image" style="background-image: url('${image}')"></div>\
+                <div class="image" style="background-image: url('${image.replace(/thumbnails/g, "images")}')"></div>\
             </div>`
         }).join("")}
         <a href="" class="carousel-button exit">\
