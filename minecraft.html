@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Minecraft - Portfolio Maël PERON</title>
+    <meta name="description" content="Website portfolio.">
+    <meta name="author" content="Maël PERON">
+
+    <meta property="og:title" content="Portfolio - Maël PERON">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles/autres.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/custom-elements.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+    </nav>
+
+    <div id="navbar-button">
+        <a href="#" id="nav-button">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+        </a>
+    </div>
+
+    <div id="overlay" style="display: none;">
+        <div class="section"></div>
+    </div>
+
+    <div id="return-to-summary">
+        <a href="#summary" class="summary-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hand-point-left" class="svg-inline--fa fa-hand-point-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M44.8 155.826h149.234c-5.841-8.248-10.57-16.558-14.153-24.918C166.248 99.098 189.778 63.986 224 64c18.616.008 32.203 10.897 40 29.092 12.122 28.286 78.648 64.329 107.534 77.323 17.857 7.956 28.453 25.479 28.464 43.845l.002.001v171.526c0 11.812-8.596 21.897-20.269 23.703-46.837 7.25-61.76 38.483-123.731 38.315-2.724-.007-13.254.195-16 .195-50.654 0-81.574-22.122-72.6-71.263-18.597-9.297-30.738-39.486-16.45-62.315-24.645-21.177-22.639-53.896-6.299-70.944H44.8c-24.15 0-44.8-20.201-44.8-43.826 0-23.283 21.35-43.826 44.8-43.826zM440 176h48c13.255 0 24 10.745 24 24v192c0 13.255-10.745 24-24 24h-48c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24zm24 212c11.046 0 20-8.954 20-20s-8.954-20-20-20-20 8.954-20 20 8.954 20 20 20z"></path></svg>
+            <span>Retour au sommaire</span>
+        </a>
+    </div>
+
+    <div class="main">
+        <div class="content">
+            <div class="presentation" style="width: 80vw;">
+                <h1>📦 Minecraft</h1>
+            </div>
+            <div id="summary">
+                <h2>Sommaire</h2>
+                <ul class="summary-nav">
+                </ul>
+            </div>
+            <div class="presentation">
+                <p>Minecraft représente - de loin - mon <code class="background">activité de création principale</code> après celles de l\'école.<br>De l\'<code class="background">animation</code> au <code class="background">scénario</code>, en passant par
+                    le <code class="background">game design</code> et la <code class="background">modélisation 3d</code>, je touche aux <code class="background">diverses facettes disponibles</code> dans la célèbre oeuvre vidéoludique.</p>
+            </div>
+            <div class="collections">
+                <hr>
+                <div class="collection">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+        contentDiv = document.querySelector(".collections");
+        content = [
+                // id, displayName, description, content:
+                ["projets_mc", "Projets", `<p>De nombreux <code class="gradient">projets en équipe</code> dont la (pré)production a été lancée !<br style="margin-bottom: 1rem;">${['Farcraft - Pitch', 'Farcraft - Scénario', 'Wyrd Tales', 'Projet Alpha', 'Creative Olympics', 'Guide Mapmaking'].map(e => {
+                    return `${createA(`./files/others/minecraft/projets/${e}.pdf`, e, ['link','pdf'])}`
+                }).join("<br>")}</p>`, [
+                    ['https://gunivers.net/wp-content/uploads/2020/06/Baground-CO2020.png', 'Creative Olympics'],
+                    ['https://gunivers.net/wp-content/uploads/2021/05/Projet-alpha-1.png', 'Projet Alpha'],
+                    ['https://gunivers.net/wp-content/uploads/2020/06/Guide-Mapmaking-Development.png', 'Guide Mapmaking'],
+                    'mHEvByUJ3y4'
+                ]],
+                ["jam", "Games JAM", `<p>« Une game jam est un hackathon avec pour thème principal les jeux vidéo, mais pouvant aussi porter sur les jeux au sens large.<br>Les participants, groupés en équipes, doivent créer un jeu dans un temps limité, généralement le temps d'un week-end, sur 24 à 72 heures. »<br>${createA('./files/others/minecraft/jam/game_jams.pdf', 'Game Jams', ['link','pdf'])}</p>`, []],
+                ["images", "Rendus & Modélisation 3D", undefined, [
+                    ['./files/others/minecraft/rendus/1.png'],
+                    ['./files/others/minecraft/rendus/2.png'],
+                    ['./files/others/minecraft/rendus/3.png'],
+                    ['./files/others/minecraft/rendus/4.png'],
+                    ['./files/others/minecraft/rendus/5.png'],
+                    ['./files/others/minecraft/rendus/6.png'],
+                    ['./files/others/minecraft/rendus/7.png'],
+                    ['./files/others/minecraft/rendus/8.png'],
+                    ['./files/others/minecraft/rendus/9.png'],
+                    ['./files/others/minecraft/rendus/10.png'],
+                    ['./files/others/minecraft/rendus/11.png'],
+                    ['./files/others/minecraft/rendus/12.png']
+                ]]
+            ].forEach(elements => {
+                [id, displayName, description, content] = elements;
+                    collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
+                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
+                    grid = createElementFromHTML(`<div class="grid"></div>`)
+                    content.forEach(element => {
+                        return Array.isArray(element) ? createCard(grid, element[0], element[1]) : grid.append(createVideo(element, ["card"]))
+                    })
+                    collection.append(grid)
+                    contentDiv.append(collection)
+        })
+    </script>
+</body>
+
+</html>
