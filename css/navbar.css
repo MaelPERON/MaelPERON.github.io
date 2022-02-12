@@ -119,6 +119,11 @@
     }
     .navbar-nav {
         flex-direction: column;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: unset;
+        justify-content: unset;
     }
     .nav-link:hover {
         margin-right: -1.5rem;
