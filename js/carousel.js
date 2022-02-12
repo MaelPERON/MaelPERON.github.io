@@ -1,7 +1,7 @@
 function createCarousel(overlaySection, images) {
     carousel = createElementFromHTML(`\
     <div class="carousel-container">\
-        ${images.map(image => {
+        ${images.filter(image => image != undefined).map(image => {
             return `<div class="item" style="display: none">\
                 <div class="image" style="background-image: url('${image.replace(/thumbnails/g, "images")}')"></div>\
             </div>`
