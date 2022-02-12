@@ -47,6 +47,7 @@
     margin: 0 1.5rem;
     rotate: 0deg;
     transition: .4s cubic-bezier(.45, .05, .55, .95);
+    fill: white;
 }
 
 .nav-link:hover svg {
