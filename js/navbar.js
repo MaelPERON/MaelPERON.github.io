@@ -24,3 +24,10 @@ function createNavbar() {
     })
     obj.append(ul)
 }
+
+function deleteNavbar() {
+    obj = document.querySelector("nav.navbar")
+    while (obj.firstChild) {
+        obj.firstChild.remove()
+    }
+}
