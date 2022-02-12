@@ -83,7 +83,7 @@
                     grid = createElementFromHTML(`<div class="grid"></div>`)
             cards = Array.isArray(files) ? files : [...Array(files).keys()]
             cards.forEach((e, i) => {
-                createCard(grid, `./files/infography/${folder}/thumbnails/${i+1}.jpg`, isNaN(e) ? e : null)
+                createCard(grid, `./files/infography/${folder}/thumbnails/${i+1}.jpg`, isNaN(e) ? e : undefined)
             });
             collection.appendChild(grid)
             contentDiv.appendChild(collection)

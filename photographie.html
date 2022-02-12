@@ -78,7 +78,7 @@
                     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>${displayName != undefined ? displayName : folder}</span></a></li>`))
                     grid = createElementFromHTML(`<div class="grid"></div>`)
             cards = [...Array(elementNumber).keys()].forEach((e, i) => {
-                createCard(grid, `./files/photography/${folder}/thumbnails/${i+1}.jpg`, null)
+                createCard(grid, `./files/photography/${folder}/thumbnails/${i+1}.jpg`, undefined)
             });
             collection.appendChild(grid)
             contentDiv.appendChild(collection)

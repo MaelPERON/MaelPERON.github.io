@@ -1,9 +1,9 @@
-function createCard(contentDiv, path, span = null) {
+function createCard(contentDiv, path, span) {
     obj = document.createElement("div")
     obj.classList.add("card")
     obj.classList.add("lazy")
     obj.setAttribute("data-src", path);
-    if (span != null) {
+    if (span != undefined) {
         spanElement = document.createElement("span");
         spanElement.textContent = span;
         obj.appendChild(spanElement);
