@@ -67,11 +67,11 @@
         content = [
                 ["dissociation", undefined, "<code class='gradient'>Hello, friends.</code>", 4],
                 ["hypnos", undefined, `Bercé par Nyx, je cherche le sommeil. Mon corps est si lourd...`, 6],
-                ["cyanotype", undefined, undefined, 4],
+                ["cyanotype", undefined, `<code class="gradient">Procédé photographique ancien</code>    à base de produits photosensibles étalés sur une feuille, puis exposée au soleil avec un négatif par-dessus.<br>Les travaux présents sont soit : des photographies ou des photocollages.`, 4],
                 ["ciel_rouge", "Ciel Rouge", undefined, 2],
-                ["light", "Light Painting", undefined, 2],
-                ["portraits", undefined, undefined, 4],
-                ["autres", undefined, undefined, 6]
+                ["light", "Light Painting", `<code class="gradient">Expérimentations</code> et <code class="gradient">défi technique</code> avec le triangle de l'exposition en photographie.`, 2],
+                ["portraits", undefined, undefined, 4]
+                // ["autres", undefined, undefined, 6]
             ].forEach(elements => {
                     [folder, displayName, description, elementNumber] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
