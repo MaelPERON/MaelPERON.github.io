@@ -68,23 +68,36 @@
                 ["dissociation", undefined, "<code class='gradient'>Hello, friends.</code>", 4],
                 ["hypnos", undefined, `Bercé par Nyx, je cherche le sommeil. Mon corps est si lourd...`, 6],
                 ["eclipse", undefined, `Quand la fin des temps survient, l'astre dévore notre monde.`, 4],
+                ["portraits", undefined, undefined, [
+                    "autoportrait-1",
+                    "respiratory",
+                    "autoportrait-2",
+                    "hugo",
+                    "thibault",
+                    "autoportrait-3",
+                    "jumpology",
+                    "autoportrait-4",
+                    "autoportrait-5",
+                    "autoportrait-6",
+                    "autoportrait-7"
+                ]],
                 ["perspective", "Perspetive's Madness", `Voyageur de plans, j'explore différentes dimensions.`, 2],
                 ["cyanotype", undefined, `<code class="gradient">Procédé photographique ancien</code>    à base de produits photosensibles étalés sur une feuille, puis exposée au soleil avec un négatif par-dessus.<br>Les travaux présents sont soit : des photographies ou des photocollages.`, 4],
                 ["chats", undefined, `<italic>Meow?</italic>`, 4],
                 ["ciel_rouge", "Ciel Rouge", undefined, 3],
-                ["light", "Light Painting", `<code class="gradient">Expérimentations</code> et <code class="gradient">défi technique</code> avec le triangle de l'exposition en photographie.`, 2],
-                ["portraits", undefined, undefined, 10]
+                ["light", "Light Painting", `<code class="gradient">Expérimentations</code> et <code class="gradient">défi technique</code> avec le triangle de l'exposition en photographie.`, 2]
                 // ["autres", undefined, undefined, 6]
             ].forEach(elements => {
-                    [folder, displayName, description, elementNumber] = elements
+                    [folder, displayName, description, objects] = elements
                     collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
                     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>${displayName != undefined ? displayName : folder}</span></a></li>`))
                     grid = createElementFromHTML(`<div class="grid"></div>`)
-            cards = [...Array(elementNumber).keys()].forEach((e, i) => {
-                createCard(grid, `./files/photography/${folder}/thumbnails/${i+1}.jpg`, undefined)
-            });
-            collection.appendChild(grid)
-            contentDiv.appendChild(collection)
+                    cards = !Array.isArray(objects) ? [...Array(objects).keys()].map(x => x+1) : objects
+                    cards.forEach(e => {
+                        createCard(grid, `./files/photography/${folder}/thumbnails/${e}.jpg`, undefined)
+                    })
+                    collection.appendChild(grid)
+                    contentDiv.appendChild(collection)
         })
     </script>
 </body>
