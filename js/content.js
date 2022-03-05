@@ -34,6 +34,10 @@ function createSection(contentDiv, id, section){
                 object.value.forEach(card => {
                     createCard(grid, `./files/${section.folder}/${card}`, undefined)
                 })
+                break;
+            case "video":
+                [videoId, classes] = object.value
+                grid.append(createVideo(videoId, classes))
             default:
                 break;
         }
