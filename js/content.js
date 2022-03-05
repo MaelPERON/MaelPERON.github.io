@@ -20,9 +20,39 @@ function createA(link, child, classes = []) {
     return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer">${child}</a>`;
 }
 
+function createSection(contentDiv, id, section){
+    displayName = section.displayName != undefined ? section.displayName : id
+    collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${section.description != undefined ? `<p>${section.description}</p>` : ""}</div>`);
+    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
+    grid = createElementFromHTML(`<div class="grid"></div>`)
+    section.value.forEach(object => {
+        switch(object.type){
+            case "card":
+                createCard(grid, `./files/${section.folder}/${object.value}`, undefined)
+                break;
+            case "cards":
+                object.value.forEach(card => {
+                    createCard(grid, `./files/${section.folder}/${card}`, undefined)
+                })
+            default:
+                break;
+        }
+    })
+    // cards = !Array.isArray(objects) ? [...Array(objects).keys()].map(x => x+1) : objects
+    // cards.forEach(e => {
+    //     createCard(grid, `./files/photography/${folder}/thumbnails/${e}.jpg`, undefined)
+    // })
+    collection.appendChild(grid)
+    contentDiv.appendChild(collection)
+}
+
 mainDiv = document.querySelector(".main")
 overlay = document.getElementById("overlay")
 returnToSummary = document.getElementById("return-to-summary")
+
+for(const [id, section] of Object.entries(content)){
+    createSection(contentDiv, id, section)
+}
 
 document.addEventListener("keyup", (e) => {
     if(["ArrowRight","ArrowLeft","Escape"].includes(e.key)) e.preventDefault();
