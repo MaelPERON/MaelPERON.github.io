@@ -26,21 +26,8 @@ function createSection(contentDiv, id, section){
     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
     grid = createElementFromHTML(`<div class="grid"></div>`)
     section.value.forEach(object => {
-        switch(object.type){
-            case "card":
-                createCard(grid, `./files/${section.folder}/${object.value}`, undefined)
-                break;
-            case "cards":
-                object.value.forEach(card => {
-                    createCard(grid, `./files/${section.folder}/${card}`, undefined)
-                })
-                break;
-            case "video":
-                [videoId, classes] = object.value
-                grid.append(createVideo(videoId, classes))
-            default:
-                break;
-        }
+        object.folder = section.folder;
+        createObject(object)
     })
     // cards = !Array.isArray(objects) ? [...Array(objects).keys()].map(x => x+1) : objects
     // cards.forEach(e => {
@@ -48,6 +35,24 @@ function createSection(contentDiv, id, section){
     // })
     collection.appendChild(grid)
     contentDiv.appendChild(collection)
+}
+
+function createObject(object){
+    switch(object.type){
+        case "card":
+            createCard(grid, `./files/${object.folder}/${object.value}`, undefined)
+            break;
+        case "cards":
+            object.value.forEach(card => {
+                createCard(grid, `./files/${object.folder}/${card}`, undefined)
+            })
+            break;
+        case "video":
+            [videoId, classes] = object.value
+            grid.append(createVideo(videoId, classes))
+        default:
+            break;
+    }
 }
 
 mainDiv = document.querySelector(".main")
