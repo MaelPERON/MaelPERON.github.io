@@ -1,26 +1,4 @@
-function createCard(contentDiv, path, span) {
-    obj = document.createElement("div")
-    obj.classList.add("card")
-    obj.classList.add("lazy")
-    obj.setAttribute("data-src", path);
-    if (span != undefined) {
-        spanElement = document.createElement("span");
-        spanElement.textContent = span;
-        obj.appendChild(spanElement);
-    }
-    contentDiv.appendChild(obj)
-    return obj;
-}
-
-function createVideo(id, classes = []) {
-    return createElementFromHTML(`<iframe${classes.length > 0 ? ` class=${classes.join(" ")}` : ''} src="https://www.youtube-nocookie.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
-}
-
-function createA(link, child, classes = []) {
-    return `<a href="${link}"${classes.length > 0 ? ` class="${classes.join(' ')}"` : ''} target="_blank" ref="noopener noreferrer">${child}</a>`;
-}
-
-function createSection(contentDiv, id, section){
+function createSection(contentDiv, id, section) {
     displayName = section.displayName != undefined ? section.displayName : id
     collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName}</h1>${section.description != undefined ? `<p>${section.description}</p>` : ""}</div>`);
     document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName}</span></a></li>`))
