@@ -60,35 +60,78 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-                ["le_repaire", "le repaire", "Petit travail dont le but était de réaliser le repaire d'un mystérieux personnage...", 3],
-                ["objects", "objets", "Collection d'objets en infographie.", 4],
-                ["chimeres", "chimères", "<p>Petits exercices constitant à mélanger deux animaux entre eux.</p>", [
-                    "beepard",
-                    "catxolotl",
-                    "hedgepus",
-                    "llabit",
-                    "marcrow",
-                    "owlcat",
-                    "snagle"
-                ]]
-            ].forEach(elements => {
-                    [folder, displayName, description, files] = elements
-                    collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>${displayName != undefined ? displayName : folder}</span></a></li>`))
-                    grid = createElementFromHTML(`<div class="grid"></div>`)
-            cards = Array.isArray(files) ? files : [...Array(files).keys()]
-            cards.forEach((e, i) => {
-                createCard(grid, `./files/infography/${folder}/thumbnails/${i+1}.jpg`, isNaN(e) ? e : undefined)
-            });
-            collection.appendChild(grid)
-            contentDiv.appendChild(collection)
-        })
+        content = {
+            le_repaire: {
+                displayName: "le repaire",
+                folder: "infography/le_repaire/thumbnails",
+                description: "Petit travail dont le but était de réaliser le repaire d'un mystérieux personnage...",
+                value: [{
+                    type: "cards",
+                    value: [
+                        "1.jpg",
+                        "2.jpg",
+                        "3.jpg"
+                    ]
+                }]
+            },
+            objects: {
+                displayName: "objets",
+                folder: "infography/objects/thumbnails",
+                description: "Collection d'objets en infographie.",
+                value: [{
+                    type: "cards",
+                    value: [
+                        "1.jpg",
+                        "2.jpg",
+                        "3.jpg",
+                        "4.jpg"
+                    ]
+                }]
+            },
+            chimeres: {
+                displayName: "chimères",
+                folder: "infography/chimeres/thumbnails",
+                description: "<p>Petits exercices constitant à mélanger deux animaux entre eux.</p>",
+                value: [{
+                    type: "cards",
+                    value: [
+                        [
+                            "1.jpg",
+                            "beepard"
+                        ],
+                        [
+                            "2.jpg",
+                            "catxolotl"
+                        ],
+                        [
+                            "3.jpg",
+                            "hedgepus"
+                        ],
+                        [
+                            "4.jpg",
+                            "llabit"
+                        ],
+                        [
+                            "5.jpg",
+                            "marcrow"
+                        ],
+                        [
+                            "6.jpg",
+                            "owlcat"
+                        ],
+                        [
+                            "7.jpg",
+                            "snagle"
+                        ]
+                    ]
+                }]
+            }
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>

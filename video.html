@@ -60,36 +60,107 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-                ["course_poursuite", "course poursuite", `<p>Court métrage réalisé en une semaine sur le jeu-vidéo Minecraft. En cours de progression...</p>`, ['n8hsg1gE450']],
-                ["apprentie_tueuse", "apprentie tueuse", `<p>L’exercice consiste à transformer une <code class="gradient">histoire imaginée</code> en un <code class="gradient">storyboard imagé</code>. Ce storyboard a ensuite été utilisé pour créer <code class="gradient">un très court</code>.<hr>Plus d'informations:<br><br>${createA('./files/video/apprentie_tueuse/kezako.pdf', 'Kezako?', ['link','pdf'])}<br>${createA('./files/video/apprentie_tueuse/storyboard.pdf', 'Storyboard', ['link','pdf'])}<p>`, ["jHCJA3gBk3Y"]],
-                // ["making_off", "Making OFF tournage", `<p>Lorsque notre tournage fut terminé, je me suis greffé à un autre groupe dans le but de produire une vidéo making-off. Mais finalement, par soucis de clarté, la vidéo finale sert plus de best-off.</p>`, ["OZINKkcM2e0"]],
-                ["intro_philo", "Mise en scène introduction", `<p>Mise en scène introductive - non retenue - pour une vidéo essai sur la représentation de la folie dans la culture populaire.</p>`, ["LB5r9h7-FiA"]],
-                ["exposes", "Exposés / Projets vidéos Lycée", `<p>Voici des <code class="gradient">montage vidéos</code> / <code class="gradient">podcast</code> qui ont été produit·e·s lors des mes années lycées.<br><br>Logiciels utilisés: ${["Adobe Premiere Pro", "Adobe Photoshop", "Adobe Audition", "Audacity"].map(x => `<code class="gradient">${x}</code>`).join(" ")}</p>`, [
-                        'I3Rgb5IQ6hE',
-                        'yaKvFwaagIc',
-                        'ijZKdsuwTcI',
-                        'hZudgwieSYQ',
-                        'kFUyhP5neGc',
-                        'IruA2kYLm2o',
-                        'W6dYMuiOwSU'
-                ]]
-            ].forEach(elements => {
-                    [id, displayName, description, videos] = elements
-                    collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
-                    grid = createElementFromHTML(`<div class="grid"></div>`)
-            videos.forEach((e, i) => {
-                grid.append(createVideo(e, ["card"]))
-            });
-            collection.appendChild(grid)
-            contentDiv.appendChild(collection)
-        })
+        content = {
+            course_poursuite: {
+                displayName: "course poursuite",
+                description: "<p>Court métrage réalisé en une semaine sur le jeu-vidéo Minecraft. En cours de progression...</p>",
+                folder: "video/course_poursuite",
+                value: [{
+                    type: "video",
+                    value: [
+                        "n8hsg1gE450", [
+                            "card"
+                        ]
+                    ]
+                }]
+            },
+            apprentie_tueuse: {
+                displayName: "apprentie tueuse",
+                description: "<p>L’exercice consiste à transformer une <code class=\"gradient\">histoire imaginée</code> en un <code class=\"gradient\">storyboard imagé</code>. Ce storyboard a ensuite été utilisé pour créer <code class=\"gradient\">un très court</code>.<hr>Plus d'informations:<br><br><a href=\"./files/video/apprentie_tueuse/kezako.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Kezako?</a><br><a href=\"./files/video/apprentie_tueuse/storyboard.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Storyboard</a><p>",
+                folder: "video/apprentie_tueuse",
+                value: [{
+                    type: "video",
+                    value: [
+                        "jHCJA3gBk3Y", [
+                            "card"
+                        ]
+                    ]
+                }]
+            },
+            intro_philo: {
+                displayName: "Mise en scène introduction",
+                description: "<p>Mise en scène introductive - non retenue - pour une vidéo essai sur la représentation de la folie dans la culture populaire.</p>",
+                folder: "video/intro_philo",
+                value: [{
+                    type: "video",
+                    value: [
+                        "LB5r9h7-FiA", [
+                            "card"
+                        ]
+                    ]
+                }]
+            },
+            exposes: {
+                displayName: "Exposés / Projets vidéos Lycée",
+                description: "<p>Voici des <code class=\"gradient\">montage vidéos</code> / <code class=\"gradient\">podcast</code> qui ont été produit·e·s lors des mes années lycées.<br><br>Logiciels utilisés: <code class=\"gradient\">Adobe Premiere Pro</code> <code class=\"gradient\">Adobe Photoshop</code> <code class=\"gradient\">Adobe Audition</code> <code class=\"gradient\">Audacity</code></p>",
+                folder: "video/exposes",
+                value: [{
+                    type: "video",
+                    value: [
+                        "I3Rgb5IQ6hE", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "yaKvFwaagIc", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "ijZKdsuwTcI", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "hZudgwieSYQ", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "kFUyhP5neGc", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "IruA2kYLm2o", [
+                            "card"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: [
+                        "W6dYMuiOwSU", [
+                            "card"
+                        ]
+                    ]
+                }]
+            }
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>

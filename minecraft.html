@@ -67,47 +67,68 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-                // id, displayName, description, content:
-                ["projets_mc", "Projets", `<p>De nombreux <code class="gradient">projets en équipe</code> dont la (pré)production a été lancée !<br style="margin-bottom: 1rem;">${['Farcraft - Pitch', 'Farcraft - Scénario', 'Wyrd Tales', 'Projet Alpha', 'Creative Olympics', 'Guide Mapmaking'].map(e => {
-                    return `${createA(`./files/others/minecraft/projets/${e}.pdf`, e, ['link','pdf'])}`
-                }).join("<br>")}</p>`, [
-                    ['https://gunivers.net/wp-content/uploads/2020/06/Baground-CO2020.png', 'Creative Olympics'],
-                    ['https://gunivers.net/wp-content/uploads/2021/05/Projet-alpha-1.png', 'Projet Alpha'],
-                    ['https://gunivers.net/wp-content/uploads/2020/06/Guide-Mapmaking-Development.png', 'Guide Mapmaking'],
-                    'mHEvByUJ3y4'
-                ]],
-                ["jam", "Games JAM", `<p>« Une game jam est un hackathon avec pour thème principal les jeux vidéo, mais pouvant aussi porter sur les jeux au sens large.<br>Les participants, groupés en équipes, doivent créer un jeu dans un temps limité, généralement le temps d'un week-end, sur 24 à 72 heures. »<br>${createA('./files/others/minecraft/jam/game_jams.pdf', 'Game Jams', ['link','pdf'])}</p>`, []],
-                ["images", "Rendus & Modélisation 3D", undefined, [
-                    ['./files/others/minecraft/rendus/1.png'],
-                    ['./files/others/minecraft/rendus/2.png'],
-                    ['./files/others/minecraft/rendus/3.png'],
-                    ['./files/others/minecraft/rendus/4.png'],
-                    ['./files/others/minecraft/rendus/5.png'],
-                    ['./files/others/minecraft/rendus/6.png'],
-                    ['./files/others/minecraft/rendus/7.png'],
-                    ['./files/others/minecraft/rendus/8.png'],
-                    ['./files/others/minecraft/rendus/9.png'],
-                    ['./files/others/minecraft/rendus/10.png'],
-                    ['./files/others/minecraft/rendus/11.png'],
-                    ['./files/others/minecraft/rendus/12.png']
-                ]]
-            ].forEach(elements => {
-                [id, displayName, description, content] = elements;
-                    collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
-                    grid = createElementFromHTML(`<div class="grid"></div>`)
-                    content.forEach(element => {
-                        return Array.isArray(element) ? createCard(grid, element[0], element[1]) : grid.append(createVideo(element, ["card"]))
-                    })
-                    collection.append(grid)
-                    contentDiv.append(collection)
-        })
+        content = {
+            projets_mc: {
+                displayName: "Projets",
+                folder: "others/minecraft",
+                description: "<p>De nombreux <code class=\"gradient\">projets en équipe</code> dont la (pré)production a été lancée !<br style=\"margin-bottom: 1rem;\"><a href=\"./files/others/minecraft/projets/Farcraft - Pitch.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Farcraft - Pitch</a><br><a href=\"./files/others/minecraft/projets/Farcraft - Scénario.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Farcraft - Scénario</a><br><a href=\"./files/others/minecraft/projets/Wyrd Tales.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Wyrd Tales</a><br><a href=\"./files/others/minecraft/projets/Projet Alpha.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Projet Alpha</a><br><a href=\"./files/others/minecraft/projets/Creative Olympics.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Creative Olympics</a><br><a href=\"./files/others/minecraft/projets/Guide Mapmaking.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Guide Mapmaking</a></p>",
+                value: [{
+                    type: "cards",
+                    value: [
+                        [
+                            "projets/Baground-CO2020.png",
+                            "Creative Olympics"
+                        ],
+                        [
+                            "projets/Projet-alpha-1.png",
+                            "Projet Alpha"
+                        ],
+                        [
+                            "projets/Guide-Mapmaking-Development.png",
+                            "Guide Mapmaking"
+                        ]
+                    ]
+                }, {
+                    type: "video",
+                    value: ["mHEvByUJ3y4", ["card"]]
+                }]
+            },
+            jam: {
+                displayName: "Games JAM",
+                folder: "others/minecraft",
+                description: "<p>« Une game jam est un hackathon avec pour thème principal les jeux vidéo, mais pouvant aussi porter sur les jeux au sens large.<br>Les participants, groupés en équipes, doivent créer un jeu dans un temps limité, généralement le temps d'un week-end, sur 24 à 72 heures. »<br><a href=\"./files/others/minecraft/jam/game_jams.pdf\" class=\"link pdf\" target=\"_blank\" ref=\"noopener noreferrer\">Game Jams</a></p>",
+                value: [{
+                    type: "cards",
+                    value: []
+                }]
+            },
+            images: {
+                displayName: "Rendus & Modélisation 3D",
+                folder: "others/minecraft",
+                value: [{
+                    type: "cards",
+                    value: [
+                        "rendus/1.png",
+                        "rendus/2.png",
+                        "rendus/3.png",
+                        "rendus/4.png",
+                        "rendus/5.png",
+                        "rendus/6.png",
+                        "rendus/7.png",
+                        "rendus/8.png",
+                        "rendus/9.png",
+                        "rendus/10.png",
+                        "rendus/11.png",
+                        "rendus/12.png"
+                    ]
+                }]
+            }
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>
