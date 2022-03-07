@@ -18,11 +18,21 @@ function createSection(contentDiv, id, section) {
 function createObject(grid, object, collection){
     switch(object.type){
         case "card":
-            createCard(grid, `./files/${object.folder}/${object.value}`, undefined)
+            if(Array.isArray(object.value)){
+                [path, span] = object.value
+                createCard(grid, `./files/${object.folder}/${path}`, span)
+            } else {
+                createCard(grid, `./files/${object.folder}/${object.value}`, undefined)
+            }
             break;
         case "cards":
             object.value.forEach(card => {
-                createCard(grid, `./files/${object.folder}/${card}`, undefined)
+                if(Array.isArray(card)){
+                    [path, span] = card
+                    createCard(grid, `./files/${object.folder}/${path}`, span)
+                } else {
+                    createCard(grid, `./files/${object.folder}/${card}`, undefined)
+                }
             })
             break;
         case "video":
