@@ -36,3 +36,5 @@ function imageExist(src) {
         img.src = src
     })
 }
+
+function extensionArray(n, format = "jpg") { return [...Array(n).keys()].map(i => `${i+1}.${format}`) }
