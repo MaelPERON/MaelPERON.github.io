@@ -68,36 +68,47 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-                // id, displayName, description, content
-                ["2D", undefined, `<p>Logiciels utilisés : <code class="gradient">Adobe Animate</code>, <code class="gradient">Adobe After Effects</code>.</p>`, [
-                    "rqUYcN47Hv8",
-                    "0ywOVflOL4g"
-                ]],
-                ["3D", undefined, `<p>Logiciels utilisés: <code class="gradient">Mine-imator</code>.</p>`, [
-                    ['./files/others/minecraft/animation/craquage.gif'],
-                    '6WQtLmp6-VI',
-                    'aywnhSiHcyE',
-                    'HObTNo8zZR4',
-                    'C1k-j27y2xU',
-                    'DKzOfWzoOtg'
-                ]]
-            ].forEach(elements => {
-                    [id, displayName, description, content] = elements;
-                    collection = createElementFromHTML(`<div class="collection" id="${id}"><h1>${displayName != undefined ? displayName : id}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${id}"><span>${displayName != undefined ? displayName : id}</span></a></li>`))
-                    grid = createElementFromHTML(`<div class="grid"></div>`)
-                    content.forEach(element => {
-                        return Array.isArray(element) ? createCard(grid, element[0], element[1]) : grid.append(createVideo(element, ["card"]))
-                    })
-                    collection.append(grid)
-                    contentDiv.append(collection)
-        })
+        content = {
+            "2D": {
+                description: "<p>Logiciels utilisés : <code class=\"gradient\">Adobe Animate</code>, <code class=\"gradient\">Adobe After Effects</code>.</p>",
+                folder: "others",
+                value: [{
+                    type: "video",
+                    value: ["rqUYcN47Hv8", ["card"]]
+                }, {
+                    type: "video",
+                    value: ["0ywOVflOL4g", ["card"]]
+                }]
+            },
+            "3D": {
+                description: "<p>Logiciels utilisés: <code class=\"gradient\">Mine-imator</code>.</p>",
+                folder: "others",
+                value: [{
+                    type: "card",
+                    value: "minecraft/animation/craquage.gif"
+                }, {
+                    type: "video",
+                    value: ["6WQtLmp6-VI", ["card"]]
+                }, {
+                    type: "video",
+                    value: ["aywnhSiHcyE", ["card"]]
+                }, {
+                    type: "video",
+                    value: ["HObTNo8zZR4", ["card"]]
+                }, {
+                    type: "video",
+                    value: ["C1k-j27y2xU", ["card"]]
+                }, {
+                    type: "video",
+                    value: ["DKzOfWzoOtg", ["card"]]
+                }]
+            }
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>
