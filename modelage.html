@@ -60,33 +60,58 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-            ["abstract", undefined, undefined, [
-                "Esquisse",
-                null,
-                "Traçage",
-                "Découpage",
-                "Sculpt",
-                "Final"
-            ]],
-            ["elder_guardian", "elder guardian", undefined, 4]
-        ].forEach(element => {
-            [id, displayName, description, cards] = element;
-            content[id] = {
-                displayName: displayName,
-                folder: `photography/${id}/thumbnails`,
-                description: description,
+        content = {
+            abstract: {
+                folder: "modelage/abstract/thumbnails",
                 value: [{
                     type: "cards",
-                    value: Array.isArray(cards) ? cards : [...Array(cards).keys()].map(i => `${i+1}.jpg`)
+                    value: [
+                        [
+                            "1.jpg",
+                            "Esquisse"
+                        ],
+                        [
+                            "2.jpg",
+                            null
+                        ],
+                        [
+                            "3.jpg",
+                            "Traçage"
+                        ],
+                        [
+                            "4.jpg",
+                            "Découpage"
+                        ],
+                        [
+                            "5.jpg",
+                            "Sculpt"
+                        ],
+                        [
+                            "6.jpg",
+                            "Final"
+                        ]
+                    ]
+                }]
+            },
+            elder_guardian: {
+                displayName: "elder guardian",
+                folder: "modelage/elder_guardian/thumbnails",
+                value: [{
+                    type: "cards",
+                    value: [
+                        "1.jpg",
+                        "2.jpg",
+                        "3.jpg",
+                        "4.jpg"
+                    ]
                 }]
             }
-        })
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>
