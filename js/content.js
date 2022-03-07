@@ -44,7 +44,6 @@ function createObject(grid, object, collection){
             break;
         case "cards":
             object.value.forEach(card => {
-                console.log("test")
                 createCard(grid, `./files/${object.folder}/${card}`, undefined)
             })
             break;
