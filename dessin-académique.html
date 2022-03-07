@@ -60,26 +60,49 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/carousel.js"></script>
     <script>
         contentDiv = document.querySelector(".collections");
-        content = [
-                ["temp", "sélection", undefined, 8],
-                ["modele_vivant", "modèle vivant", undefined, 10]
-            ].forEach(elements => {
-                    [folder, displayName, description, files] = elements
-                    collection = createElementFromHTML(`<div class="collection" id="${folder}"><h1>${displayName != undefined ? displayName : folder}</h1>${description != undefined ? `<p>${description}</p>` : ""}</div>`);
-                    document.querySelector(".summary-nav").appendChild(createElementFromHTML(`<li class="summary-item"><a href="#${folder}"><span>${displayName != undefined ? displayName : folder}</span></a></li>`))
-                    grid = createElementFromHTML(`<div class="grid"></div>`)
-            cards = Array.isArray(files) ? files : [...Array(files).keys()]
-            cards.forEach((e, i) => {
-                createCard(grid, `./files/academique/${folder}/thumbnails/${i+1}.jpg`, isNaN(e) ? e : undefined)
-            });
-            collection.appendChild(grid)
-            contentDiv.appendChild(collection)
-        })
+        content = {
+            "temp": {
+                "displayName": "sélection",
+                "folder": "academique/temp/thumbnails",
+                "value": [{
+                    "type": "cards",
+                    "value": [
+                        "1.jpg",
+                        "2.jpg",
+                        "3.jpg",
+                        "4.jpg",
+                        "5.jpg",
+                        "6.jpg",
+                        "7.jpg",
+                        "8.jpg"
+                    ]
+                }]
+            },
+            "modele_vivant": {
+                "displayName": "modèle vivant",
+                "folder": "academique/modele_vivant/thumbnails",
+                "value": [{
+                    "type": "cards",
+                    "value": [
+                        "1.jpg",
+                        "2.jpg",
+                        "3.jpg",
+                        "4.jpg",
+                        "5.jpg",
+                        "6.jpg",
+                        "7.jpg",
+                        "8.jpg",
+                        "9.jpg",
+                        "10.jpg"
+                    ]
+                }]
+            }
+        }
     </script>
+    <script src="js/content.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>
