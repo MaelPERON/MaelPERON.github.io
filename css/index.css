@@ -29,6 +29,10 @@ header h2 {
     margin: 0;
 }
 
+#about-me {
+    min-height: unset;
+}
+
 .shortcuts {
     display: flex;
     align-items: center;
@@ -46,6 +50,9 @@ header h2 {
     .box {
         display: none;
     }
+    #about-me {
+        min-height: unset;
+    }
 }
 
 @media only screen and (min-width: 54rem) {
@@ -59,6 +66,9 @@ header h2 {
     header h2 {
         letter-spacing: 1.25rem;
         font-size: 2.5rem;
+    }
+    #about-me {
+        min-height: 50vh;
     }
     .shortcuts {
         width: 50%;
