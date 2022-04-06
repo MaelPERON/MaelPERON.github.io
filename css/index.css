@@ -42,9 +42,16 @@ header h2 {
     color: var(--secondary);
 }
 
+@media only screen and (max-width: 54rem){
+    .box {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 54rem) {
     .header-text {
         justify-content: end;
+        transform: translateY(-40%);
     }
     header h1 {
         font-size: 8rem;
