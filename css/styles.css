@@ -4,6 +4,7 @@
     --gray: #131313;
     --primary: #ff4d4d;
     --secondary: #ffffff;
+    --anim: .2s ease-in-out;
 }
 
 body {
@@ -18,8 +19,16 @@ h1 {
 	margin: 0;
 }
 
+a {
+    color: var(--secondary);
+    transition: var(--anim);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
 svg {
-    fill: var(--secondary);
     pointer-events: none;
 }
 
@@ -40,7 +49,6 @@ svg {
 .nav-link {
     font-size: 1.5rem;
     text-decoration: none;
-    color: var(--secondary);
     text-transform: capitalize;
 }
 
