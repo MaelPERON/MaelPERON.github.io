@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TEMPLATE - Portfolio Maël PERON</title>
+    <meta name="description" content="Website portfolio.">
+    <meta name="author" content="Maël PERON">
+
+    <meta property="og:title" content="Portfolio - Maël PERON">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages/work-page.css">
+</head>
+
+<body>
+    <a href="../index.html#works" class="home">Retour</a>
+    <a href="#collections-list" id="scroll-back" style="display: none;">Remonter</a>
+    
+    <div class="presentation">
+        <h1 style="opacity: 0;">Work's Name</h1>
+    </div>
+
+    <div class="spacer" style="background-image: url('../assets/img/gui/spacers/nether-up.png')"></div>
+
+    <section class="content">
+        <div class="collections-list">
+            <h2 style="opacity: 0;">Navigation Rapide</h2>
+            <div class="list-grid">
+            </div>
+        </div>
+        <div class="collections">
+            <hr>
+            <div class="collection" id="apprentie-tueuse">
+                <div class="description text-block">
+                    <h1>Apprentie Tueuse</h1>
+                    <p>L’exercice consiste à transformer une <bold>histoire imaginée</bold> en un <bold>storyboard imagé</bold>. Ce storyboard a ensuite été utilisé pour créer <bold>un très court</bold>.<br>Plus d'informations:<br><br><a href="../files/video/apprentie_tueuse/kezako.pdf\" target="_blank" ref="noopener noreferrer">Kezako?</a><br><a href="../files/video/apprentie_tueuse/storyboard.pdf" target="_blank" ref="noopener noreferrer">Storyboard</a></p>
+                </div>
+                <div class="grid">
+                    <div class="card lazy video" data-src="jHCJA3gBk3Y"></div>
+                </div>
+            </div>
+            <div class="collection" id="mise-en-scene">
+                <div class="description text-block">
+                    <h1>Mise en scène introduction</h1>
+                    <p>Mise en scène introductive - non retenue - pour une vidéo essai sur la <bold>représentation de la folie dans la culture populaire</bold>.</p>
+                </div>
+                <div class="grid">
+                    <div class="card lazy video" data-src="LB5r9h7-FiA"></div>
+                </div>
+            </div>
+            <div class="collection" id="lycee">
+                <div class="description text-block">
+                    <h1>Travaux Vidéos Lycée</h1>
+                    <p>Voici une liste non exhaustive de mes travaux vidéo réalisés durant mes années lycée.</p>
+                </div>
+                <div class="grid">
+                    <div class="card lazy video" data-src="ijZKdsuwTcI"></div>
+                    <div class="card lazy video" data-src="hZudgwieSYQ"></div>
+                    <div class="card lazy video" data-src="kFUyhP5neGc"></div>
+                    <div class="card lazy video" data-src="IruA2kYLm2o"></div>
+                    <div class="card lazy video" data-src="W6dYMuiOwSU"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer flip" style="background-image: url('../assets/img/gui/spacers/nether-down.png');"></div>
+
+    <section class="carousel" style="background: repeat url('../assets/img/gui/minecraft.png'); display: none">
+    </section>
+
+    <script src="../lib/ScrollMagic.js"></script>
+    <script src="../lib/addIndicators.js"></script>
+    <script src="../lib/anime.min.js"></script>
+    <script src="../lib/lazyloading.js"></script>
+    <script src="../lib/utils.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="./work-page.js"></script>
+</body>
+
+</html>
