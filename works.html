@@ -82,6 +82,15 @@
     <script src="./js/utils.js"></script>
     <script src="./js/lazy-loading.js"></script>
     <script src="./js/app.js"></script>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                a = createElementFromHTML(`<a href="./works/${card.getAttribute("id")}.html"></a>`)
+                a.click();
+                delete a;
+            })
+        })
+    </script>
 </body>
 
 </html>
