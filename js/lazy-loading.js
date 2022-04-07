@@ -2,7 +2,7 @@
 function cardLoading(image){
     if (image.classList.contains("video")) {
         videoElement = createElementFromHTML(`<iframe id="player" type="text/html"
-        src="http://www.youtube.com/embed/${image.getAttribute("data-src").replace("http://www.youtube.com/embed/","")}"
+        src="http://www.youtube.com/embed/${/(\/|\?v=)([\w\d]*)$/.exec(image.getAttribute("data-src"))[2]}"
         frameborder="0"></iframe>`)
         image.append(videoElement)
     } else if (image.classList.contains("pdf")){
