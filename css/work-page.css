@@ -25,6 +25,36 @@ section > h2 {
 	display: flex;
 	justify-content: center;
 	align-items: end;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.card h3 {
+	width: 100%;
+	margin: 0;
+	padding: 1rem;
+	text-align: center;
+}
+
+.card.video {
+	align-items: center;
+}
+
+.card.video iframe {
+	aspect-ratio: 3/2;
+	width: 100%;
+}
+
+.card.pdf {
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card.pdf svg {
+	width: 30%;
+	transform: translateY(50%);
 }
 
 .card:hover {
@@ -85,5 +115,6 @@ section > h2 {
     .card:hover h3 {
         opacity: 1;
         transform: translateY(0);
+        background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0) 100%);
     }
 }
