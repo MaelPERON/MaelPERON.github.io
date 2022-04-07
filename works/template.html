@@ -40,10 +40,10 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis exercitationem saepe ab perspiciatis cumque facere harum odio odit temporibus a. Voluptatem vitae voluptatum dolorem facere excepturi perspiciatis dolore facilis nam!
         Quas, corrupti. Provident aspernatur itaque ipsum necessitatibus similique, neque cum aliquid sapiente repudiandae? Sit corporis vitae, obcaecati blanditiis, perferendis inventore temporibus distinctio aperiam quam dicta nostrum! Atque iure facilis esse.</p>
         <div class="grid">
-            <div class="card" data-src="./files/projects/folie-et-popculture/thumbnail.jpg">
+            <div class="card lazy" data-src="./files/projects/folie-et-popculture/thumbnail.jpg">
                 <h3>{{CARD NAME}}</h3>
             </div>
-            <div class="card video" data-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
+            <div class="card lazy video" data-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
         </div>
     </section>
     <hr>
@@ -64,16 +64,19 @@
             </div>
         </div>
         <div class="grid">
-            <div class="card" data-src="./assets/img/placeholder.png">
+            <div class="card lazy" data-src="./assets/img/placeholder.png">
                 <h3>{{CARD NAME}}</h3>
             </div>
-            <div class="card pdf" data-src="./files/projects/rotated-chaos/more.pdf">
+            <div class="card lazy pdf" data-src="./files/projects/rotated-chaos/more.pdf">
                 <h3>{{CARD NAME}}</h3>
             </div>
-            <div class="card video" data-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
+            <div class="card lazy video" data-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
         </div>
     </section>
 
+    <script src="./js/utils.js"></script>
+    <script src="./js/lazy-loading.js"></script>
+    <script src="./js/work-page.js"></script>
 </body>
 
 </html>
