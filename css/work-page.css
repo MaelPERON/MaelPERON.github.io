@@ -66,6 +66,10 @@ section > h2 {
 	gap: 1rem;
 }
 
+a.more {
+    margin-top: 1rem;
+}
+
 .box {
 	flex: 1;
 	display: flex;
