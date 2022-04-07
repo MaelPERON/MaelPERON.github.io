@@ -1,0 +1,54 @@
+.row {
+    width: 100%;
+    padding: 2rem;
+}
+
+.grid {
+	display: grid;
+	width: 80%;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.card {
+	aspect-ratio: 3/2;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--gray);
+}
+
+.card h3, .card h2 {
+	margin-left: 2rem;
+	margin-right: 2rem;
+    pointer-events: none;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.date::before {
+	content: '📅 ';
+}
+
+@media only screen and (min-width: 54rem){
+    .card h2 {
+        transform: translateY(2rem);
+        transition: var(--anim);
+        opacity: 0;
+    }
+    .card:hover h2 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .card .date {
+        opacity: 0;
+        transition: var(--anim);
+    }
+    .card:hover .date {
+        opacity: 1;
+    }
+}
