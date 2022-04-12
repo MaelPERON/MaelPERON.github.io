@@ -6,6 +6,12 @@ section > h2 {
     margin-top: 0;
 }
 
+.collection > h2:after,
+.presentation-text > h2:after {
+    content: ' 📌';
+    cursor: pointer;
+}
+
 .collection {
 	min-height: unset;
 }
