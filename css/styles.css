@@ -68,6 +68,10 @@ section {
 	align-items: center;
 }
 
+section.no-height {
+    min-height: unset;
+}
+
 section h1 {
     width: 100%;
     text-transform: capitalize;
