@@ -2,74 +2,86 @@ section.header {
     min-height: unset;
 }
 
-section > h2 {
+section>h2 {
     margin-top: 0;
 }
 
-.collection > h2:after,
-.presentation-text > h2:after {
+.collection>h2:after,
+.presentation-text>h2:after {
     content: ' 📌';
     cursor: pointer;
 }
 
 .collection {
-	min-height: unset;
+    min-height: unset;
 }
 
 .grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
     margin-top: 2rem;
     width: 100%;
 }
 
 .card {
-	aspect-ratio: 3/2;
-	width: 100%;
-	background-color: var(--gray);
-	display: flex;
-	justify-content: center;
-	align-items: end;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+    aspect-ratio: 3/2;
+    width: 100%;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .card h3 {
-	width: 100%;
-	margin: 0;
-	padding: 1rem;
-	text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
 }
 
 .card.video {
-	align-items: center;
+    align-items: center;
 }
 
 .card.video iframe {
-	aspect-ratio: 3/2;
-	width: 100%;
+    aspect-ratio: 3/2;
+    width: 100%;
 }
 
 .card.pdf {
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card.pdf svg {
-	width: 30%;
-	transform: translateY(50%);
+    width: 30%;
+    transform: translateY(50%);
 }
 
 .card:hover {
     cursor: pointer;
 }
 
+.masonry-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    gap: 1rem;
+}
+
+.masonry-card {
+    height: 300px;
+}
+
 .presentation {
-	display: flex;
-	gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 a.more {
@@ -77,11 +89,11 @@ a.more {
 }
 
 .box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .box img {
@@ -89,42 +101,39 @@ a.more {
 }
 
 .presentation-text {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .presentation-text span {
     content: '📅 ';
 }
 
-@media only screen and (max-width: 54rem){
+@media only screen and (max-width: 54rem) {
     .presentation {
         flex-direction: column;
     }
-    
     .presentation-text {
         flex-direction: column;
         margin-bottom: 1rem;
     }
 }
 
-@media only screen and (min-width: 54rem){
+@media only screen and (min-width: 54rem) {
     .grid {
         width: 80%
     }
-    
     .card h3 {
         opacity: 0;
         transform: translateY(1rem);
         transition: var(--anim);
         pointer-events: none;
     }
-
     .card:hover h3 {
         opacity: 1;
         transform: translateY(0);
-        background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0) 100%);
+        background: linear-gradient(0deg, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0) 100%);
     }
 }
