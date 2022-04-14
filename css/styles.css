@@ -57,7 +57,7 @@ svg {
 }
 
 .zoom:hover {
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 section {
