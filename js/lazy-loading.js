@@ -20,6 +20,14 @@ function cardLoading(image){
     } else {
         image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
     }
+    if (image.classList.contains("zoom")){
+        image.addEventListener('click', (e) => {
+            e.preventDefault();
+            a = createElementFromHTML(`<a href='${document.baseURI + image.getAttribute("data-src").replace(/^(\.\/)/,'')}' target="_blank" ref="noopener noreferrer"></a>`)
+            a.click()
+            delete a;
+        })
+    }
     image.classList.remove("lazy");
 }
 
