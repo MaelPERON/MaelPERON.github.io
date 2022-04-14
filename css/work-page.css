@@ -111,6 +111,16 @@ a.more {
     content: '📅 ';
 }
 
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+.thumbnail iframe {
+    width: 100%;
+    height: 100%;
+}
+
 @media only screen and (max-width: 54rem) {
     .presentation {
         flex-direction: column;
