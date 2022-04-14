@@ -7,7 +7,8 @@ function toggleMore(button,cards){
 document.querySelectorAll("a.more").forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
-        toggleMore(button, Array.from(button.parentElement.querySelectorAll(".grid > .card")).filter((card,i) => i+1 > (button.getAttribute("data-min") ? parseInt(button.getAttribute("data-min")) : 3)))
+        target = e.target.getAttribute("data-target")
+        toggleMore(button, Array.from(button.parentElement.querySelectorAll(target ? target : ".grid > .card")).filter((card,i) => i+1 > (button.getAttribute("data-min") ? parseInt(button.getAttribute("data-min")) : 3)))
     })
     button.click()
 })
