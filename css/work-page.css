@@ -122,6 +122,10 @@ a.more {
 }
 
 @media only screen and (min-width: 54rem) {
+    .collection p,
+    .project p {
+        width: 80%;
+    }
     .grid {
         width: 80%
     }
