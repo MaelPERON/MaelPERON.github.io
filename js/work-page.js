@@ -17,7 +17,7 @@ document.querySelectorAll(".section-anchor").forEach(anchor => {
     id = anchor.closest('section').getAttribute("id")
     anchor.setAttribute("data-anchor", id)
     if(id != null) anchor.addEventListener('click', (e) => {
-        navigator.clipboard.writeText(location.href = location.href.replace(/(html)(#\w*)?$/, `$1#${e.target.getAttribute("data-anchor")}`)).then(function() {
+        navigator.clipboard.writeText(location.href = location.href.match(/(^[^#]*)/)[0] + '#' + e.target.getAttribute("data-anchor")).then(function() {
             console.log(location.href)
         }, function() {alert("failed")});
     })
