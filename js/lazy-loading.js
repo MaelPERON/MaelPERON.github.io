@@ -15,7 +15,11 @@ function cardLoading(image){
         })
         image.insertAdjacentElement("afterbegin", iconElement)
     }
-    image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
+    if (image.tagName.toLowerCase() == "img") {
+        image.setAttribute("src", image.getAttribute("data-src"))
+    } else {
+        image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
+    }
     image.classList.remove("lazy");
 }
 
