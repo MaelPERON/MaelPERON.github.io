@@ -78,9 +78,12 @@ section h1 {
     font-size: 4rem;
     -webkit-text-stroke: 1px var(--secondary);
     color: transparent;
+    margin-bottom: 1rem;
 }
 
 section p {
 	text-align: justify;
-	width: 100%;
+	width: 75ch;
+	text-indent: 2rem;
+	margin: 0;
 }
