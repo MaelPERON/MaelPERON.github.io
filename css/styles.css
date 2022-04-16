@@ -36,6 +36,35 @@ svg {
     pointer-events: none;
 }
 
+blockquote {
+	padding: 1rem 3rem;
+	background: #ffffff12;
+	line-height: 2rem;
+	font-style: italic;
+	position: relative;
+	border-left: 0.5rem solid var(--primary);
+}
+
+blockquote::before {
+	content: '\201C';
+	font-size: 4rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	color: var(--primary);
+}
+
+blockquote::after {
+    content: '';
+}
+
+blockquote span {
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 1rem;
+	display: block;
+}
+
 .nav-list {
     display: flex;
     gap: 1rem;
