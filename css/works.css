@@ -1,0 +1,44 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+	width: 80%;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.card {
+	padding: 2rem;
+	background-color: var(--gray);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card h1, .card h2 {
+	text-align: center;
+	pointer-events: none;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 54rem){
+    .card h1 {
+        transition: var(--anim);
+        transform: translateY(35%);
+    }
+    .card:hover h1 {
+        transform: translateY(0);
+    }    
+    .card h2 {
+        opacity: 0;
+        transition: var(--anim);
+        transform: translateY(-3rem);
+    }
+    .card:hover h2 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

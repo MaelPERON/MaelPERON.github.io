@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mes Travaux - Portfolio Maël PERON</title>
+    <meta name="description" content="Website portfolio.">
+    <meta name="author" content="Maël PERON">
+
+    <meta property="og:title" content="Portfolio - Maël PERON">
+    <link rel="icon" href="./assets/icon.ico">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/works.css">
+
+</head>
+
+<body>
+    <nav></nav>
+
+    <section>
+        <h1>mes travaux</h1>
+        <div class="grid">
+            <div class="card" id="photographie"> <h1>📷</h1> <h2>Photographie</h2> </div>
+            <div class="card" id="video"> <h1>🎥</h1> <h2>Vidéo</h2> </div>
+            <div class="card" id="infographie"> <h1>💻</h1> <h2>Infographie</h2> </div>
+            <div class="card" id="animation"> <h1>🤸‍♀️</h1> <h2>Animation 2D/3D</h2> </div>
+            <div class="card" id="programmation"> <h1>👨‍💻</h1> <h2> Programmation</h2> </div>
+            <div class="card" id="minecraft"> <h1>🎮</h1> <h2>Minecraft</h2> </div>
+            <div class="card" id="perspective"> <h1>📏</h1> <h2>Perspective</h2> </div>
+            <div class="card" id="modelage"> <h1>🧱</h1> <h2>Modelage</h2> </div>
+            <div class="card" id="ceramique"> <h1>🗿</h1> <h2>Céramique</h2> </div>
+            <div class="card" id="academique"> <h1>📐</h1> <h2>Dessin Académique</h2> </div>
+            <div class="card" id="architecture"> <h1>🌃</h1> <h2>Architecture</h2> </div>
+            <div class="card" id="design"> <h1>🔮</h1> <h2>Design Graphique</h2> </div>
+            <div class="card" id="dessin-gravure"> <h1>🧰</h1> <h2>Dessin et Gravure</h2> </div>
+            <div class="card" id="skin"> <h1>✨</h1> <h2>Exploration Plastique</h2> </div>
+            <div class="card" id="croquis"> <h1>📕</h1> <h2>Carnet de Croquis</h2> </div>
+            <div class="card" id="couleur"> <h1>🎨</h1> <h2>Théorie de la Couleur</h2> </div>
+        </div>
+    </section>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/lazy-loading.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                a = createElementFromHTML(`<a href="./works/${card.getAttribute("id")}.html"></a>`)
+                a.click();
+                delete a;
+            })
+        })
+    </script>
+</body>
+
+</html>
