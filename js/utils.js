@@ -7,3 +7,7 @@ function createElementFromHTML(htmlString) {
     div.innerHTML = htmlString.trim();
     return div.firstChild;
 }
+
+function getThumbnail(src){
+    return /\.png$/.exec(src) == null ? src.replace(/(\.\/files)\/((thumbnails)\/)?/, '$1/thumbnails/') : src
+}

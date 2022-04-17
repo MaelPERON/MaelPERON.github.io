@@ -16,9 +16,9 @@ function cardLoading(image){
         image.insertAdjacentElement("afterbegin", iconElement)
     }
     if (image.tagName.toLowerCase() == "img") {
-        image.setAttribute("src", image.getAttribute("data-src"))
+        image.setAttribute("src", getThumbnail(image.getAttribute("data-src")))
     } else {
-        image.style["background-image"] = `url('${image.getAttribute("data-src")}')`
+        image.style["background-image"] = `url('${getThumbnail(image.getAttribute("data-src"))}')`
     }
     if (image.classList.contains("zoom")){
         image.addEventListener('click', (e) => {
