@@ -43,7 +43,7 @@ blockquote {
 	font-style: italic;
 	position: relative;
 	border-left: 0.5rem solid var(--primary);
-    margin: 0;
+    margin: 1rem 0;
 }
 
 blockquote::before {
