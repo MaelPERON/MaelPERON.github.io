@@ -38,7 +38,7 @@ header h2 {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    margin-top: 3rem;
+    margin: 3rem 0;
 }
 
 .shortcut {
@@ -52,6 +52,9 @@ header h2 {
     }
     #about-me {
         min-height: unset;
+    }
+    header h1 {
+        text-align: center;
     }
 }
 

@@ -112,7 +112,7 @@ section h1 {
 
 section p {
 	text-align: justify;
-	width: 75ch;
+	max-width: 75ch;
 	text-indent: 2rem;
 	margin: 0;
 }
