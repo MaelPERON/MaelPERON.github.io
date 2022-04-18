@@ -1,8 +1,7 @@
 // Lazyloading: thanks to this guide https://imagekit.io/blog/lazy-loading-images-complete-guide/
 function cardLoading(image){
     if (image.classList.contains("video")) {
-        videoElement = createElementFromHTML(`<iframe id="player" type="text/html"
-        src="http://www.youtube.com/embed/${/(\/|\?v=)?([\w\d\-]*)$/.exec(image.getAttribute("data-src"))[2]}"
+        videoElement = createElementFromHTML(`<iframe src="http://www.youtube.com/embed/${/(\/|\?v=)?([\w\d\-]*)$/.exec(image.getAttribute("data-src"))[2]}"
         frameborder="0"></iframe>`)
         image.append(videoElement)
     } else if (image.classList.contains("pdf")){
