@@ -9,5 +9,5 @@ function createElementFromHTML(htmlString) {
 }
 
 function getThumbnail(src){
-    return /\.png$/.exec(src) == null ? src.replace(/(\.\/files)\/((thumbnails)\/)?/, '$1/thumbnails/') : src
+    return /\.jpg$/.exec(src) != null ? src.replace(/(\.\/files)\/((thumbnails)\/)?/, '$1/thumbnails/') : src
 }
