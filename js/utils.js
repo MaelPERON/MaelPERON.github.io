@@ -11,3 +11,7 @@ function createElementFromHTML(htmlString) {
 function getThumbnail(src){
     return /\.jpg$/.exec(src) != null ? src.replace(/(\.\/files)\/((thumbnails)\/)?/, '$1/thumbnails/') : src
 }
+
+function getVideoID(str) {
+    return /(\/|\?v=)?([\w\d\-]*)$/.exec(str)[2]
+}
